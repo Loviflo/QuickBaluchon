@@ -1,0 +1,92 @@
+			nav a{
+				color: white;
+				text-decoration: none;
+				display:inline-block;
+			}
+			nav ul{
+				list-style: none;
+				padding-left: 0;
+			}
+			li{
+				font-size: bold;
+				font-style: italic;
+			}
+			.section_texte{
+				font-style: italic;
+				padding-left:40px;
+				padding-right:40px;
+			}
+			*{
+				font-family: 'Raleway';
+				box-sizing:border-box;
+			}
+			@font-face{
+				font-family: 'Raleway';
+				src: url('../fonts/raleway-regular-webfont.woff') format('woff'),
+				url('../fonts/raleway-regular-webfont.woff2') format('woff2');
+				font-weight: normal;
+			}
+			@font-face{
+				font-family: 'Raleway';
+				src: url('../fonts/raleway-bold-webfont.woff') format('woff'),
+				url('../fonts/raleway-bold-webfont.woff2') format('woff2');
+				font-weight: bold;
+			}
+			@font-face{
+				font-family: 'Raleway';
+				src: url('../fonts/raleway-italic-webfont.woff') format('woff'),
+				url('../fonts/raleway-italic-webfont.woff2') format('woff2');
+				font-weight: normal;
+				font-style: italic;
+			}
+			@font-face{
+				font-family: 'Raleway';
+				src: url('../fonts/raleway-bolditalic-webfont.woff') format('woff'),
+				url('../fonts/raleway-bolditalic-webfont.woff2') format('woff2');
+				font-weight: bold;
+				font-style: italic;
+			}
+			main h1{
+				text-align: center;
+				color: #A4260A;
+				padding:30px;
+			}
+			
+			main h2{
+				text-align: center;
+				color: #A8763E;
+				padding:30px;
+			}
+			nav{
+				float: right;
+			}
+			header{
+				background-color: #674232;
+				color: #2B2118;
+				padding-left:40px;
+				padding-right:40px;
+			}
+			footer{
+				background-color: #674232;
+				color: #2B2118;
+				padding:40px;
+			}
+			body{
+				margin: 0;
+				background-color: #ECF0F1;
+			}
+			nav:hover{
+				color:red;
+			}
+			.cta{
+				padding:15px 30px;
+				color:white;
+				background-color:#274d89;
+				text-decoration:none;
+				border:2px solid black;
+				border-radius:50px;
+				box-shadow:2px 2px 6px rgba(0,0,0,0.3);
+			}
+			a:hover{
+				color:red;
+			}
