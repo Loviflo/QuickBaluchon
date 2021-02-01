@@ -14,8 +14,8 @@ static void printQR(const uint8_t qrcode[]);
 int main(void) {
 	char *url = "https://google.com";
     QRCode(url);
-	printf("Tapez votre URL");
-	scanf("%c",url);
+	//printf("Tapez votre URL");
+	//scanf("%c",url);
   CURL *curl;
   CURLcode res;
 
@@ -34,6 +34,7 @@ int main(void) {
 
     /* always cleanup */
     curl_easy_cleanup(curl);
+    printf("It works");
   }
 
 	return 0;
