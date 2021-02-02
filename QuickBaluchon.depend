@@ -1,11 +1,13 @@
 # depslib dependency file v1.0
-1612028168 source:g:\projet annuel\quickbaluchon\main.c
+1612129346 source:g:\projet annuel\quickbaluchon\main.c
 	<stdbool.h>
 	<stddef.h>
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<curl/curl.h>
+	<curl/easy.h>
+	<fcntl.h>
 	"qrcodegen.c"
 
 1612012630 g:\projet annuel\quickbaluchon\qrcodegen.c
