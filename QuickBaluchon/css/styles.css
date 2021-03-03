@@ -12,7 +12,8 @@
 				font-style: italic;
 			}
 			.section_texte{
-				font-style: italic;
+				/* font-style: italic; */
+				font-size: 15pt;
 				padding-left:40px;
 				padding-right:40px;
 			}
