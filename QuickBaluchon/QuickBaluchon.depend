@@ -1,0 +1,31 @@
+# depslib dependency file v1.0
+1612200378 source:g:\projet annuel\quickbaluchon\main.c
+	<stdbool.h>
+	<stddef.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<curl/curl.h>
+	<curl/easy.h>
+	<fcntl.h>
+	"qrcodegen.c"
+
+1612012630 g:\projet annuel\quickbaluchon\qrcodegen.c
+	<assert.h>
+	<limits.h>
+	<stdlib.h>
+	<string.h>
+	"qrcodegen.h"
+
+1611855836 g:\projet annuel\quickbaluchon\qrcodegen.h
+	<stdbool.h>
+	<stddef.h>
+	<stdint.h>
+
+1612012630 source:g:\projet annuel\quickbaluchon\qrcodegen.c
+	<assert.h>
+	<limits.h>
+	<stdlib.h>
+	<string.h>
+	"qrcodegen.h"
+
