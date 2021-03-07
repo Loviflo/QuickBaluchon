@@ -11,31 +11,49 @@
 static void QRCode(char *url);
 static void printQR(const uint8_t qrcode[]);
 
+
 int main(void) {
 	char *url = "https://google.com";
     QRCode(url);
 	//printf("Tapez votre URL");
 	//scanf("%c",url);
-  CURL *curl;
-  CURLcode res;
-
+  //CURL *curl;
+  //CURLcode res;
+/*
   curl = curl_easy_init();
   if(curl) {
     curl_easy_setopt(curl, CURLOPT_URL, "https://google.com");
     /* example.com is redirected, so we tell libcurl to follow redirection */
-    curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
+    //curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
 
     /* Perform the request, res will get the return code */
-    res = curl_easy_perform(curl);
+    //res = curl_easy_perform(curl);
     /* Check for errors */
-    if(res != CURLE_OK)
-      fprintf(stderr, "curl_easy_perform() failed: %s\n",
-              curl_easy_strerror(res));
+    //if(res != CURLE_OK)
+      //fprintf(stderr, "curl_easy_perform() failed: %s\n",
+        //      curl_easy_strerror(res));
 
     /* always cleanup */
-    curl_easy_cleanup(curl);
+    //curl_easy_cleanup(curl);
     printf("It works");
-  }
+CURL *curl;
+CURLcode res;
+curl = curl_easy_init();
+if(curl) {
+  curl_easy_setopt(curl, CURLOPT_CUSTOMREQUEST, "POST");
+  curl_easy_setopt(curl, CURLOPT_URL, "localhost:81/FirstExampleApi/api/planes/create.php?model=55&capacity=22");
+  curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
+  curl_easy_setopt(curl, CURLOPT_DEFAULT_PROTOCOL, "https");
+  struct curl_slist *headers = NULL;
+  headers = curl_slist_append(headers, "Content-Type: application/json");
+  curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+  const char *data = "{\r\n    \"model\": \"787\",\r\n    \"capacity\": 200\r\n}";
+  curl_easy_setopt(curl, CURLOPT_POSTFIELDS, data);
+  res = curl_easy_perform(curl);
+}
+curl_easy_cleanup(curl);
+
+
 
 	return 0;
 }

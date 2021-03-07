@@ -1,8 +1,15 @@
 # depslib dependency file v1.0
-1614619454 source:g:\projet annuel\sps\main.c
-	<stdlib.h>
-	<stdio.h>
+1615155168 source:g:\projet annuel\sps\main.c
 	<gtk/gtk.h>
+	<stdio.h>
+	<string.h>
+	<curl/curl.h>
+	<sys/types.h>
+	<sys/stat.h>
+	<fcntl.h>
+	<errno.h>
+	<io.h>
+	<unistd.h>
 
 1366404212 h:\gtk\include\gtk-3.0\gtk\gtk.h
 	<gdk/gdk.h>
@@ -2470,5 +2477,5 @@
 1366404212 h:\gtk\include\gtk-3.0\gtk\deprecated\gtkvseparator.h
 	<gtk/gtkseparator.h>
 
-1614426784 source:g:\projet annuel\sps\cours.c
+1614942530 source:g:\projet annuel\sps\cours.c
 
