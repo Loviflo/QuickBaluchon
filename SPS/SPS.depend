@@ -1,14 +1,14 @@
 # depslib dependency file v1.0
-1615155168 source:g:\projet annuel\sps\main.c
+1615162380 source:g:\projet annuel\sps\main.c
 	<gtk/gtk.h>
 	<stdio.h>
+	<stdlib.h>
 	<string.h>
 	<curl/curl.h>
 	<sys/types.h>
 	<sys/stat.h>
 	<fcntl.h>
 	<errno.h>
-	<io.h>
 	<unistd.h>
 
 1366404212 h:\gtk\include\gtk-3.0\gtk\gtk.h

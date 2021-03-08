@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1615151256 source:g:\curltest\spssrv\main.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<dirent.h>
+
