@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <windows.h>
 #include <dirent.h>
+#include <winsock.h>
+#include <MYSQL/mysql.h>
 
 int main()
 {
@@ -16,7 +18,6 @@ while(1==1){
     dir = readdir(rep);
 
     while(dir) {
-        printf(directory);
         FILE* file = NULL;
         strcpy(fileName,directory);
         strcat(fileName,dir->d_name);
@@ -34,6 +35,16 @@ while(1==1){
         printf("%s\n",table[1]);
         printf("%s\n",table[2]);
         printf("%s\n",table[3]);
+        MYSQL mysql;
+        mysql_init(&mysql);
+        mysql_options(&mysql,MYSQL_READ_DEFAULT_GROUP,"option");
+        if(mysql_real_connect(&mysql,"localhost","root","root","sps",3307,NULL,0)){
+            char req[150] = "";
+            sprintf(req, "INSERT INTO colis (nom,prenom,type,qrcode) VALUES('%s','%s','%s','%s')",table[0],table[1],table[2],table[3]);
+            printf(req);
+            mysql_query(&mysql, req);
+            mysql_close(&mysql);
+        }
         strcpy(fileNameBAK,"BAK\\");
         strcat(fileNameBAK,dir->d_name);
         rename(fileName,fileNameBAK);

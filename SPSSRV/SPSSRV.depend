@@ -5,3 +5,11 @@
 	<windows.h>
 	<dirent.h>
 
+1615164252 source:g:\projet annuel\spssrv\main.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<dirent.h>
+	<winsock.h>
+	<MYSQL/mysql.h>
+
