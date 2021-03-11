@@ -12,8 +12,6 @@
             <ul>
                 <h4>A company ?</h4>
                 <a href="sign_in_company.php"><button type="submit" class="btn btn-primary">Click here</button></a>
-            </ul>
-            <ul>
                 <h4>A delivery man ?</h4>
                 <a href="sign_in_delivery.php"><button type="submit" class="btn btn-primary">Click here</button></a>
             </ul>
