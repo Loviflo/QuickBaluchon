@@ -7,7 +7,7 @@
     <?php include("inc/header.php"); ?>
     <body>
         <div class="container">
-            <h4>Please fill up this form so we can verify what is your company and is we could work together !</h4>
+            <h4>Please fill up this form so we can verify what is your company and if we could work together !</h4>
             <form action="company_form.php">
                 <div class="form-group">
                     <label for="email">Business Email:</label>
