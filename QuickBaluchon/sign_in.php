@@ -13,11 +13,12 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <h4>A company ?</h4>
-                        <button type="button" class="btn btn-primary" href="sign_in_company.php">Click here</button>
+                            <a href="sign_in_company.php"><button type="submit" class="btn btn-primary">Click here</button></a>
+                    </div>
                     </div>
                     <div class="col-sm-6">
                         <h4>A delivery man ?</h4>
-                        <button type="button" class="btn btn-primary" href="sign_in_delivery.php">Click here</button>
+                            <a href="sign_in_delivery.php"><button type="submit" class="btn btn-primary">Click here</button></a>
                     </div>
                 </div>
             </div>
