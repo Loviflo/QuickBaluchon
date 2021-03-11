@@ -10,7 +10,7 @@
             <h2>Want to join us ?</h2>
             <h3>Are you ...</h3>
             <div class="container">
-                <div class="row">
+                <div class="row-cols-2">
                     <div class="col-lg-6">
                         <h4>A company ?</h4>
                         <a href="sign_in_company.php"><button type="submit" class="btn btn-primary">Click here</button></a>
