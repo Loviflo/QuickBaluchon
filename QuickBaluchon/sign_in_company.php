@@ -14,8 +14,8 @@
                     <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
                 </div>
                 <div class="form-group">
-                    <label for="SIRET_Nb">SIRET number</label>
-                    <input type="password" class="form-control" id="SIRET_Nb" placeholder="Enter your company's SIRET number" name="siret" required>
+                    <label for="siret">SIRET number</label>
+                    <input type="password" class="form-control" id="siret" placeholder="Enter your company's SIRET number" name="siret" required>
                 </div>
                 <div class="form-group">
                     <label for="motives">Let us know your motives for working with us</label>
