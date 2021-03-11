@@ -9,16 +9,16 @@
         <div class="text-center">
             <h2>Want to join us ?</h2>
             <h3>Are you ...</h3>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-3">
-                    <h4>A company ?</h4>
-                    <button type="button" class="btn btn-primary"><a href="sign_in_company.php">Click here</a></button>
-                </div>
-                <div class="col-sm-3">
-                    <h4>A delivery man ?</h4>
-                    <button type="button" class="btn btn-primary"><a href="sign_in_delivery.php">Click here</a></button>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <h4>A company ?</h4>
+                        <button type="button" class="btn btn-primary"><a href="sign_in_company.php">Click here</a></button>
+                    </div>
+                    <div class="col-sm-3">
+                        <h4>A delivery man ?</h4>
+                        <button type="button" class="btn btn-primary"><a href="sign_in_delivery.php">Click here</a></button>
+                    </div>
                 </div>
             </div>
         </div>
