@@ -16,7 +16,6 @@
                     <h4>A company ?</h4>
                     <a href="sign_in_company.php">Click here</a>
                 </div>
-                </div>
                 <div class="col-auto">
                     <h4>A delivery man ?</h4>
                     <a href="sign_in_delivery.php">Click here</a>
