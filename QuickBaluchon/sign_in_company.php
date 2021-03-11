@@ -8,7 +8,7 @@
     <body>
         <div class="container">
             <h4>Please fill up this form so we can verify what is your company and if we could work together !</h4>
-            <form action="company_form.php">
+            <form action="company_form.php" method="post">
                 <div class="form-group">
                     <label for="email">Business Email:</label>
                     <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
