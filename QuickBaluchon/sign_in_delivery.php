@@ -8,14 +8,14 @@
 <body>
     <div class="container">
         <h4>Please fill up this form so we can see if we could work together !</h4>
-        <form action="company_form.php">
+        <form action="delivery_form.php">
             <div class="form-group">
                 <label for="email">Business Email:</label>
-                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
             </div>
             <div class="form-group">
                 <label for="CV">Your CV</label>
-                <input type="file" class="form-control" id="CV" placeholder="Choose a file" name="CV">
+                <input type="file" class="form-control" id="CV" placeholder="Choose a file" name="CV" required>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>

@@ -14,3 +14,7 @@
         </ul>
     </nav>
 </header>
+<?php if(isset($_GET['msg'])) {
+    echo "<p class='alert'>" . $_GET['msg'] . "</p>";
+}
+?>
