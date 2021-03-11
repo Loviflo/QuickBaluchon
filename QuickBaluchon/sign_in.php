@@ -10,8 +10,8 @@
             <h2>Want to join us ?</h2>
             <h3>Are you ...</h3>
         </div>
-        <div class="container text-center">
-            <div class="row align-middle text-center">
+        <div class="container">
+            <div class="row justify-content-center">
                 <div class="col-md-4 text-center align-middle">
                     <h4>A company ?</h4>
                     <a href="sign_in_company.php"><button type="submit" class="btn btn-primary">Click here</button></a>
