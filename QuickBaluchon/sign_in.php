@@ -6,22 +6,17 @@
     </head>
     <?php include("inc/header.php"); ?>
     <body>
-        <div class="text-center">
+        <div class="jumbotron text-center">
             <h2>Want to join us ?</h2>
             <h3>Are you ...</h3>
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-5">
-                        <h4>A company ?</h4>
-                            <a href="sign_in_company.php"><button type="submit" class="btn btn-primary">Click here</button></a>
-                    </div>
-                    </div>
-                    <div class="col-sm-5">
-                        <h4>A delivery man ?</h4>
-                            <a href="sign_in_delivery.php"><button type="submit" class="btn btn-primary">Click here</button></a>
-                    </div>
-                </div>
-            </div>
+            <ul>
+                <h4>A company ?</h4>
+                <a href="sign_in_company.php"><button type="submit" class="btn btn-primary">Click here</button></a>
+            </ul>
+            <ul>
+                <h4>A delivery man ?</h4>
+                <a href="sign_in_delivery.php"><button type="submit" class="btn btn-primary">Click here</button></a>
+            </ul>
         </div>
     </body>
     <?php include("inc/footer.php"); ?>
