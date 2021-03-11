@@ -3,6 +3,7 @@
           rel="stylesheet"
           integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
           crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <header>
     <a href="index.php"> <img src="Logo SPS.png" alt="Nothing to see here"></a>
