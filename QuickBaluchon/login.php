@@ -1,15 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
         <meta charset="UTF-8">
         <title>Login page</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
-              rel="stylesheet"
-              integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
-              crossorigin="anonymous">
     </head>
-
+    <?php include("inc/header.php"); ?>
     <body>
         <p>Prêt à te loger ?</p>
         <form>
@@ -24,9 +19,9 @@
             </div>
         </form>
             <ul>
-                <a href="index.html"><button type="submit" class="btn btn-primary">Retour à l'accueil</button></a>
+                <a href="index.php"><button type="submit" class="btn btn-primary">Retour à l'accueil</button></a>
                 <a href="login_form.php"><button type="submit" class="btn btn-success">Valider</button></a>
             </ul>
     </body>
-
+    <?php include("inc/footer.php"); ?>
 </html>

@@ -1,22 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<title>Acceuil</title>
 		<meta charset="utf-8">
 		<meta name="description" content="Page web d'exercice">
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-		<link rel="stylesheet" type="text/css" href="css/styles.css">
 	</head>
+    <?php include("inc/header.php"); ?>
 	<body>
-		<header>
-			<a href="index.html"> <img src="Logo SPS.png" alt="Nothing to see here"></a>
-			<nav>
-				<ul>
-					<li><a href="sign_in.html">Sign_in</a></li>
-					<li><a href="login.html">Login</a></li>
-				</ul>
-			</nav>
-		</header>
 		<main>
 			<h1>Acceuil</h1>
 			<h2>Ceci est un sous-titre</h2>
@@ -25,14 +15,6 @@
 				<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras fringilla eros sit amet nibh gravida pulvinar. Quisque egestas libero eget maximus tristique. Proin auctor tellus convallis purus cursus accumsan. Donec nibh purus, finibus a viverra ac, vehicula eget magna. Nulla facilisi. Cras ultrices ullamcorper accumsan. Duis ac placerat odio, non posuere tortor. Praesent vitae venenatis neque. Aliquam luctus sed mi eget venenatis. Nulla posuere vestibulum augue ut rutrum. Ut elementum magna sit amet congue cursus. In hendrerit elementum urna, sit amet consectetur justo mollis ut. In congue sit amet urna ornare semper. Proin tincidunt rutrum dui, eu ultricies nisi mollis non. Praesent ultrices arcu sed ultricies consectetur. Curabitur lectus orci, porttitor quis ornare et, tempus quis augue. Fusce nec pulvinar erat. Morbi congue varius congue. Maecenas id massa tincidunt, bibendum nulla non, rhoncus orci. Cras sollicitudin, turpis non vehicula sollicitudin, felis ipsum egestas purus, ac finibus diam risus sit amet enim. Proin eget dictum enim. Donec tempus nulla quis lacus fringilla sodales. Suspendisse feugiat auctor enim condimentum rhoncus. Duis mattis odio magna, sit amet vestibulum urna sagittis eget. Curabitur maximus sapien sed lorem mattis, efficitur viverra urna sodales. Suspendisse eu nunc dolor. Ut tincidunt neque vel urna hendrerit consectetur. Integer porttitor enim tortor, sed consectetur purus porttitor et. Sed faucibus lacus non dolor tincidunt imperdiet. Sed tempus diam ut felis bibendum faucibus. Nam rutrum scelerisque massa in posuere. Pellentesque dignissim diam sit amet luctus accumsan. Sed maximus risus mi, vitae pretium massa sodales ut. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris nunc ligula, blandit id est id, mollis sollicitudin orci. Etiam vitae odio eget nulla consectetur ullamcorper id nec enim. Proin eleifend dapibus lorem, at vehicula velit ultrices a. Nunc non scelerisque est. Ut nec ipsum dapibus metus tincidunt pellentesque non non lacus.</p>
 			</section>
 		</main>
-		<footer>
-			Site placé sous protection VAC
-			<nav>
-				<ul>
-					<li><a href="Contact.html">Contact</a></li>
-					<li><a href="A propos.html">A propos</a></li>
-				</ul>
-			</nav>
-		</footer>
 	</body>
+    <?php include("inc/footer.php"); ?>
 </html>
