@@ -8,7 +8,7 @@
 <body>
     <div class="container">
         <h4>Please fill up this form so we can see if we could work together !</h4>
-        <form action="delivery_form.php" method="post">
+        <form action="delivery_form.php" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="email">Business Email:</label>
                 <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
