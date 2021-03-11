@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
         <meta charset="UTF-8">
         <title>Login page</title>
     </head>
-
+    <?php include("inc/header.php"); ?>
     <body>
         <p>Prêt à te loger ?</p>
         <form>
@@ -24,5 +23,5 @@
                 <a href="login_form.php"><button type="submit" class="btn btn-success">Valider</button></a>
             </ul>
     </body>
-
+    <?php include("inc/footer.php"); ?>
 </html>
