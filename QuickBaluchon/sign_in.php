@@ -11,14 +11,14 @@
             <h3>Are you ...</h3>
             <div class="container">
                 <div class="row-cols-2">
-                    <div class="col-lg-6">
+                    <div class="col-md-6">
                         <h4>A company ?</h4>
-                        <a href="sign_in_company.php"><button type="submit" class="btn btn-primary">Click here</button></a>
+                        <a href="sign_in_company.php">Click here</a>
                     </div>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-md-6">
                         <h4>A delivery man ?</h4>
-                        <a href="sign_in_delivery.php"><button type="submit" class="btn btn-primary">Click here</button></a>
+                        <a href="sign_in_delivery.php">Click here</a>
                     </div>
                 </div>
             </div>
