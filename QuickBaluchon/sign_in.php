@@ -11,7 +11,7 @@
             <h3>Are you ...</h3>
         </div>
         <div class="container_md">
-            <div class="row">
+            <div class="row align-middle">
                 <div class="col-md-4 text-center align-middle">
                     <h4>A company ?</h4>
                     <a href="sign_in_company.php"><button type="submit" class="btn btn-primary">Click here</button></a>
