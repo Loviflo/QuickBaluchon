@@ -10,7 +10,7 @@
             <h2>Want to join us ?</h2>
             <h3>Are you ...</h3>
         </div>
-        <div class="container_md">
+        <div class="container text-center">
             <div class="row align-middle">
                 <div class="col-md-4 text-center align-middle">
                     <h4>A company ?</h4>
