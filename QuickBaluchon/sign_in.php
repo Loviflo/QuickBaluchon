@@ -11,12 +11,12 @@
             <h3>Are you ...</h3>
         </div>
         <div class="container_md">
-            <div class="row-cols-2">
-                <div class="col-auto">
+            <div class="row">
+                <div class="col-md-4">
                     <h4>A company ?</h4>
                     <a href="sign_in_company.php">Click here</a>
                 </div>
-                <div class="col-auto">
+                <div class="col-md-4">
                     <h4>A delivery man ?</h4>
                     <a href="sign_in_delivery.php">Click here</a>
                 </div>
