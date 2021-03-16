@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1615162380 source:g:\projet annuel\sps\main.c
+1615809796 source:g:\projet annuel\sps\main.c
 	<gtk/gtk.h>
 	<stdio.h>
 	<stdlib.h>

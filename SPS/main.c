@@ -18,9 +18,11 @@
 struct _info
 {
     GtkWidget *window;
+    GtkWidget *window2;
     GtkWidget *grid;
     GtkWidget *label;
     GtkWidget *submit_button;
+    GtkWidget *back_button;
     /// ***
     GtkWidget *firstName_entry;
     GtkWidget *firstName_label;
@@ -40,9 +42,19 @@ static guint flag = 0;
 void submit_clicked(GtkWidget *widget);
 GtkWidget *createWindow(const gint width, const gint height);
 void activate_callback(GtkWidget *widget);
+void page1(int argc, char *argv[]);
+
+void page1(int argc, char *argv[]){
+    gtk_init(&argc, &argv);
+    info.window2 = createWindow(800, 600);
+    gtk_widget_show_all(info.window2);
+    gtk_main();
+}
 
 int main(int argc, char *argv[])
 {
+    page1(argc,*argv);
+
     srand(time(NULL));
     gtk_init(&argc, &argv);
     info.window = createWindow(800, 600);
@@ -74,12 +86,16 @@ int main(int argc, char *argv[])
     g_signal_connect_swapped(info.QRCode_entry, "activate", G_CALLBACK(activate_callback), info.QRCode_entry);
     /// ***
     info.submit_button = gtk_button_new_with_mnemonic("_Submit");
-    gtk_widget_set_name(info.submit_button, "button");
+    gtk_widget_set_name(info.submit_button, "Valider");
     /// ***
     g_signal_connect_swapped(info.submit_button, "clicked", G_CALLBACK(submit_clicked), info.firstName_entry);
     g_signal_connect_swapped(info.submit_button, "clicked", G_CALLBACK(submit_clicked), info.lastName_entry);
     g_signal_connect_swapped(info.submit_button, "clicked", G_CALLBACK(submit_clicked), info.typeBox_entry);
     g_signal_connect_swapped(info.submit_button, "clicked", G_CALLBACK(submit_clicked), info.QRCode_entry);
+    /// ***
+    info.back_button = gtk_button_new_with_mnemonic("_Submit");
+    gtk_widget_set_name(info.back_button, "Valider");
+    gtk_signal_connect(info.back_button,"clicked",G_CALLBACK(page1), NULL);
     /// ***
     gtk_grid_attach(GTK_GRID(info.grid), info.label, 0, 0, 2, 1);
     gtk_grid_attach(GTK_GRID(info.grid), info.firstName_label, 0, 1, 1, 1);
@@ -92,6 +108,7 @@ int main(int argc, char *argv[])
     gtk_grid_attach(GTK_GRID(info.grid), info.typeBox_entry, 1, 3, 1, 1);
     gtk_grid_attach(GTK_GRID(info.grid), info.QRCode_entry, 1, 4, 1, 1);
     gtk_grid_attach(GTK_GRID(info.grid), info.submit_button, 1, 6, 1, 1);
+    gtk_grid_attach(GTK_GRID(info.grid), info.back_button, 1, 8, 1, 1);
     /// ***
     gtk_widget_set_sensitive(info.lastName_entry, FALSE);
     gtk_widget_set_sensitive(info.typeBox_entry, FALSE);
