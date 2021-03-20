@@ -35,6 +35,15 @@ struct _info
     /// ***
     GtkWidget *QRCode_entry;
     GtkWidget *QRCode_label;
+    /// ***
+    GtkWidget *address_entry;
+    GtkWidget *address_label;
+    /// ***
+    GtkWidget *zipCode_entry;
+    GtkWidget *zipCode_label;
+    /// ***
+    GtkWidget *phoneNumber_entry;
+    GtkWidget *phoneNumber_label;
 } info;
 
 static guint flag = 0;
@@ -43,13 +52,6 @@ void submit_clicked(GtkWidget *widget);
 GtkWidget *createWindow(const gint width, const gint height);
 void activate_callback(GtkWidget *widget);
 void page1(int argc, char *argv[]);
-
-void page1(int argc, char *argv[]){
-    gtk_init(&argc, &argv);
-    info.window2 = createWindow(800, 600);
-    gtk_widget_show_all(info.window2);
-    gtk_main();
-}
 
 int main(int argc, char *argv[])
 {
@@ -95,7 +97,7 @@ int main(int argc, char *argv[])
     /// ***
     info.back_button = gtk_button_new_with_mnemonic("_Submit");
     gtk_widget_set_name(info.back_button, "Valider");
-    gtk_signal_connect(info.back_button,"clicked",G_CALLBACK(page1), NULL);
+    g_signal_connect(info.back_button,"clicked",G_CALLBACK(page1), NULL);
     /// ***
     gtk_grid_attach(GTK_GRID(info.grid), info.label, 0, 0, 2, 1);
     gtk_grid_attach(GTK_GRID(info.grid), info.firstName_label, 0, 1, 1, 1);
@@ -268,3 +270,11 @@ GtkWidget *createWindow(const gint width, const gint height)
     gtk_container_set_border_width(GTK_CONTAINER(window), 50);
     return window;
 }
+
+void page1(int argc, char *argv[]){
+    gtk_init(&argc, &argv);
+    info.window2 = createWindow(800, 600);
+    gtk_widget_show_all(info.window2);
+    gtk_window_close(info.window2);
+}
+
