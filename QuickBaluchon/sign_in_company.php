@@ -10,6 +10,10 @@
             <h4>Please fill up this form so we can verify what is your company and if we could work together !</h4>
             <form action="company_form.php" method="post">
                 <div class="form-group">
+                    <label for="name">Company name:</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter your company name" name="name" required>
+                </div>
+                <div class="form-group">
                     <label for="email">Business Email:</label>
                     <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
                 </div>
