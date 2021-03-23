@@ -16,9 +16,9 @@ if (isset($_POST['name']) && isset($_POST['email']) && filter_var($_POST['email'
         "val4" => $motives
     ]);
 
-    header("location:index.php?msg=\"Success\"");
+    header("location:index.php?msg=Success");
     exit;
 }else{
-    header("location:index.php?msg=\"Error\"");
+    header("location:index.php?msg=Error");
     exit;
 }

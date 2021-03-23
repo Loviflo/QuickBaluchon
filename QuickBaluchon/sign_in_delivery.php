@@ -10,6 +10,18 @@
         <h4>Please fill up this form so we can see if we could work together !</h4>
         <form action="delivery_form.php" method="post" enctype="multipart/form-data">
             <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" class="form-control" id="username" placeholder="Enter a username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password" placeholder="Enter password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="conf_password">Confirm your password:</label>
+                <input type="password" class="form-control" id="conf_password" placeholder="Retype your password" name="conf_password" required>
+            </div>
+            <div class="form-group">
                 <label for="email">Business Email:</label>
                 <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
             </div>
