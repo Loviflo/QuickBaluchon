@@ -3,8 +3,10 @@
 require_once '../bdd/database.php';
 ini_set("display_errors",1);
 
-$db = new PDO('mysql:host=localhost;dbname=sps','root','root',
-array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+$db = getDatabaseConnection();
+
+// $db = new PDO('mysql:host=localhost;dbname=quickbaluchon','root','root',
+// array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
 $q = 'SELECT username FROM staff WHERE username = ? AND password = ?';
 $req = $db->prepare($q);
