@@ -6,14 +6,7 @@ function getDatabaseConnection(): PDO {
     $user = 'root';
     $pwd = 'root';
     $host = 'localhost';
-    return new PDO("
-    mysql:host=$host;
-    dbname=$dbname;
-    charset=utf8;
-    port=$port",
-        $user,
-        $pwd
-    );
+    return new PDO("mysql:host=$host:$port;dbname=$dbname;charset=utf8", $user, $pwd);
 }
 
 
