@@ -3,7 +3,8 @@ require_once('bdd/database.php');
 
 $allowed_types = array(
     'application/msword',
-    'text/plain'
+    'text/plain',
+    'application/pdf'
 );
 
 if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['conf_password']) && $_POST['password'] === $_POST['conf_password'] && isset($_POST['email']) && filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) && isset($_FILES['CV']) && in_array($_FILES['CV']['type'], $allowed_types)){
