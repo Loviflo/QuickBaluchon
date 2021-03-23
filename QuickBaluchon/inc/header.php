@@ -7,10 +7,16 @@
 </head>
 <header>
     <a href="index.php"> <img src="Logo SPS.png" alt="Nothing to see here"></a>
-    <nav>
-        <ul>
-            <li><a href="sign_in.php">Sign_in</a></li>
-            <li><a href="login.php">Login</a></li>
+    <nav class="navbar">
+    <a class="navbar-brand" href="#">
+        <img src="Logo SPS.png" width="30" height="30" alt="">
+    </a>
+        <ul class="navbar-nav">
+            <li class="nav-item"><a href="sign_in.php">Sign_in</a></li>
+            <li class="nav-item"><a href="login.php">Login</a></li>
+            <?php if (isset($_SESSION['user'])) { ?>
+                <li class="nav-item"><a href="actions/disconnect.php">Déconnexion</a></li>
+            <?php } ?>
         </ul>
     </nav>
 </header>
