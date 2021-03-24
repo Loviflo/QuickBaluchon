@@ -3,9 +3,10 @@
     <head>
         <meta charset="UTF-8">
         <title>Sign_in page</title>
+        <?php include("inc/head.php"); ?>
     </head>
-    <?php include("inc/header.php"); ?>
     <body>
+        <?php include("inc/header.php"); ?>
         <div class="text-center">
             <h2>Want to join us ?</h2>
             <h3>Are you ...</h3>
@@ -22,6 +23,6 @@
                 </div>
             </div>
         </div>
+        <?php include("inc/footer.php"); ?>
     </body>
-    <?php include("inc/footer.php"); ?>
 </html>

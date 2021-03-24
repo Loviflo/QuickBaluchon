@@ -3,9 +3,10 @@
     <head>
         <meta charset="UTF-8">
         <title>Login page</title>
+        <?php include("inc/head.php"); ?>
     </head>
-    <?php include("inc/header.php"); ?>
     <body>
+    <?php include("inc/header.php"); ?>
         <p>Prêt à te loger ?</p>
         <form action="actions/login_form.php" method="POST">
             <div class="input-group mb-3">
@@ -26,6 +27,6 @@
             <ul>
                 <a href="index.php"><button type="submit" class="btn btn-primary">Retour à l'accueil</button></a>
             </ul>
+            <?php include("inc/footer.php"); ?>
     </body>
-    <?php include("inc/footer.php"); ?>
 </html>

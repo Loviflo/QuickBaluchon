@@ -1,16 +1,3 @@
-nav a {
-  color: white;
-  text-decoration: none;
-  display: inline-block;
-}
-nav ul {
-  list-style: none;
-  padding-left: 0;
-}
-li {
-  font-size: bold;
-  font-style: italic;
-}
 .section_texte {
   /* font-style: italic; */
   font-size: 15pt;
@@ -18,8 +5,13 @@ li {
   padding-right: 40px;
 }
 * {
-  font-family: "Raleway";
+  font-family: "Poppins";
   box-sizing: border-box;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-Regular.ttf") format("truetype");
+  font-style: normal;
 }
 @font-face {
   font-family: "Raleway";
@@ -47,31 +39,13 @@ li {
   font-weight: bold;
   font-style: italic;
 }
-main h1 {
-  text-align: center;
-  color: #a4260a;
-  padding: 30px;
-}
-
-main h2 {
-  text-align: center;
-  color: #a8763e;
-  padding: 30px;
-}
 nav {
   float: right;
 }
 header {
-  background-color: #674232;
-  color: #2b2118;
-  padding-left: 40px;
-  padding-right: 40px;
+  font-size: 1.5em;
 }
-footer {
-  background-color: #674232;
-  color: #2b2118;
-  padding: 40px;
-}
+
 body {
   margin: 0;
   background-color: #ecf0f1;

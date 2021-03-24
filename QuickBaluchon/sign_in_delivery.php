@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Sign_in page</title>
+    <?php include("inc/head.php"); ?>
 </head>
-<?php include("inc/header.php"); ?>
 <body>
+    <?php include("inc/header.php"); ?>
     <div class="container">
         <h4>Please fill up this form so we can see if we could work together !</h4>
         <form action="delivery_form.php" method="post" enctype="multipart/form-data">
@@ -32,6 +33,6 @@
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
+    <?php include("inc/footer.php"); ?>
 </body>
-<?php include("inc/footer.php"); ?>
 </html>
