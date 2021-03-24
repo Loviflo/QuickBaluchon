@@ -1,93 +1,115 @@
-			nav a{
-				color: white;
-				text-decoration: none;
-				display:inline-block;
-			}
-			nav ul{
-				list-style: none;
-				padding-left: 0;
-			}
-			li{
-				font-size: bold;
-				font-style: italic;
-			}
-			.section_texte{
-				/* font-style: italic; */
-				font-size: 15pt;
-				padding-left:40px;
-				padding-right:40px;
-			}
-			*{
-				font-family: 'Raleway';
-				box-sizing:border-box;
-			}
-			@font-face{
-				font-family: 'Raleway';
-				src: url('../fonts/raleway-regular-webfont.woff') format('woff'),
-				url('../fonts/raleway-regular-webfont.woff2') format('woff2');
-				font-weight: normal;
-			}
-			@font-face{
-				font-family: 'Raleway';
-				src: url('../fonts/raleway-bold-webfont.woff') format('woff'),
-				url('../fonts/raleway-bold-webfont.woff2') format('woff2');
-				font-weight: bold;
-			}
-			@font-face{
-				font-family: 'Raleway';
-				src: url('../fonts/raleway-italic-webfont.woff') format('woff'),
-				url('../fonts/raleway-italic-webfont.woff2') format('woff2');
-				font-weight: normal;
-				font-style: italic;
-			}
-			@font-face{
-				font-family: 'Raleway';
-				src: url('../fonts/raleway-bolditalic-webfont.woff') format('woff'),
-				url('../fonts/raleway-bolditalic-webfont.woff2') format('woff2');
-				font-weight: bold;
-				font-style: italic;
-			}
-			main h1{
-				text-align: center;
-				color: #A4260A;
-				padding:30px;
-			}
-			
-			main h2{
-				text-align: center;
-				color: #A8763E;
-				padding:30px;
-			}
-			nav{
-				float: right;
-			}
-			header{
-				background-color: #674232;
-				color: #2B2118;
-				padding-left:40px;
-				padding-right:40px;
-			}
-			footer{
-				background-color: #674232;
-				color: #2B2118;
-				padding:40px;
-			}
-			body{
-				margin: 0;
-				background-color: #ECF0F1;
-			}
-			nav:hover{
-				color:red;
-			}
-			.cta{
-				padding:15px 30px;
-				color:white;
-				background-color:#274d89;
-				text-decoration:none;
-				border:2px solid black;
-				border-radius:50px;
-				box-shadow:2px 2px 6px rgba(0,0,0,0.3);
-			}
-			a:hover{
-				color:red;
-			}
+nav a {
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+}
+nav ul {
+  list-style: none;
+  padding-left: 0;
+}
+li {
+  font-size: bold;
+  font-style: italic;
+}
+.section_texte {
+  /* font-style: italic; */
+  font-size: 15pt;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+* {
+  font-family: "Raleway";
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/raleway-regular-webfont.woff") format("woff"),
+    url("../fonts/raleway-regular-webfont.woff2") format("woff2");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/raleway-bold-webfont.woff") format("woff"),
+    url("../fonts/raleway-bold-webfont.woff2") format("woff2");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/raleway-italic-webfont.woff") format("woff"),
+    url("../fonts/raleway-italic-webfont.woff2") format("woff2");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/raleway-bolditalic-webfont.woff") format("woff"),
+    url("../fonts/raleway-bolditalic-webfont.woff2") format("woff2");
+  font-weight: bold;
+  font-style: italic;
+}
+main h1 {
+  text-align: center;
+  color: #a4260a;
+  padding: 30px;
+}
+
+main h2 {
+  text-align: center;
+  color: #a8763e;
+  padding: 30px;
+}
+nav {
+  float: right;
+}
+header {
+  background-color: #674232;
+  color: #2b2118;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+footer {
+  background-color: #674232;
+  color: #2b2118;
+  padding: 40px;
+}
+body {
+  margin: 0;
+  background-color: #ecf0f1;
+}
+nav:hover {
+  color: red;
+}
+.cta {
+  padding: 15px 30px;
+  color: white;
+  background-color: #274d89;
+  text-decoration: none;
+  border: 2px solid black;
+  border-radius: 50px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+}
+a:hover {
+  color: red;
+}
+
+/* effect-shine */
+a.effect-shine:hover {
+  -webkit-mask-image: linear-gradient(
+    -75deg,
+    rgba(0, 0, 0, 0.6) 30%,
+    #000 50%,
+    rgba(0, 0, 0, 0.6) 70%
+  );
+  -webkit-mask-size: 200%;
+  animation: shine 2s infinite;
+}
+
+@-webkit-keyframes shine {
+  from {
+    -webkit-mask-position: 150%;
+  }
+
+  to {
+    -webkit-mask-position: -50%;
+  }
+}
