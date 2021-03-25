@@ -7,7 +7,13 @@ $allowed_types = array(
     'application/pdf'
 );
 
-if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['conf_password']) && $_POST['password'] === $_POST['conf_password'] && isset($_POST['email']) && filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) && isset($_FILES['CV']) && in_array($_FILES['CV']['type'], $allowed_types)){
+if (isset($_POST['username']) &&
+    isset($_POST['password']) &&
+    isset($_POST['conf_password']) &&
+    $_POST['password'] === $_POST['conf_password'] &&
+    isset($_POST['email']) && filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) &&
+    isset($_FILES['CV']) && in_array($_FILES['CV']['type'], $allowed_types)){
+
     $username = htmlspecialchars($_POST['username']);
     $password = $_POST['password'];
     $email = htmlspecialchars($_POST['email']);

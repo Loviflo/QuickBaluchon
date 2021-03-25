@@ -15,6 +15,14 @@
                     <input type="text" class="form-control" id="name" placeholder="Enter your company name" name="name" required>
                 </div>
                 <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" class="form-control" id="password" placeholder="Enter your password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="conf_password">Confirmed password:</label>
+                    <input type="password" class="form-control" id="conf_password" placeholder="Confirmed your password" name="conf_password" required>
+                </div>
+                <div class="form-group">
                     <label for="email">Business Email:</label>
                     <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
                 </div>
