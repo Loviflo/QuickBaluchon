@@ -27,9 +27,5 @@ if (count($results) == 0) {
 		header('location: ../index.php');
 		exit();	
     }
-	
-
 }
-
-
 ?>
