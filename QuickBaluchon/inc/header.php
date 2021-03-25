@@ -18,8 +18,27 @@
             <?php if (isset($_SESSION['user'])) { ?>
                 <a href="actions/disconnect.php"><button type="button" class="btn btn-danger">Déconnexion</button></a>
             <?php } else { ?>
-                <a href="login.php"><button type="button" class="btn btn-outline-light me-2">Login</button></a>
-                <a href="sign_in.php"><button type="button" class="btn btn-warning">Sign-up</button></a>
+                <div class="row">
+                    <div class="col">
+                        <div class="dropdown">
+                        <a aria-expanded="false" data-bs-toggle="dropdown" class="btn btn-outline-light me-2 dropdown-toggle" href="#">Connexion</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="login_client.php">Client</a>
+                                <a class="dropdown-item" href="login_deliveryman.php">Livreur</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="dropdown">
+                            <a aria-expanded="false" data-bs-toggle="dropdown" class="btn btn-warning me-2 dropdown-toggle" href="#">Inscription</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="sign_in_company.php">Client</a>
+                                    <a class="dropdown-item" href="sign_in_delivery.php">Livreur</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             <?php } ?>
         </div>
     </div>
