@@ -6,8 +6,8 @@ if (isset($_POST['name']) &&
     isset($_POST['conf_password']) &&
     $_POST['password'] === $_POST['conf_password'] &&
     isset($_POST['email']) && filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) &&
-    isset($_POST['siret'])
-    && isset($_POST['motives'])){
+    isset($_POST['siret']) &&
+    isset($_POST['motives'])){
 
     $name = htmlspecialchars($_POST['name']);
     $password = $_POST['password'];
