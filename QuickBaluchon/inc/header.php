@@ -16,7 +16,25 @@
 
         <div class="text-end">
             <?php if (isset($_SESSION['user'])) { ?>
-                <a href="/QuickBaluchon/QuickBaluchon/actions/disconnect.php"><button type="button" class="btn btn-danger">Déconnexion</button></a>
+                <div class="row">
+                    <?php if ($_SESSION['user']['rank'] == 'staff') { ?>
+                    <div class="col">
+                        <a href="/QuickBaluchon/QuickBaluchon/backend/compt_staff.php"><button type="button" class="btn btn-warning">Compte Staff</button></a>
+                    </div>
+                    <?php } else if($_SESSION['user']['rank'] == 'client') { ?>
+                    <div class="col">
+                        <a href="/QuickBaluchon/QuickBaluchon/backend/compt_staff.php"><button type="button" class="btn btn-warning">Compte Client</button></a>
+                    </div>
+                    <?php } else if($_SESSION['user']['rank'] == 'deliveryman') { ?>
+                    <div class="col">
+                        <a href="/QuickBaluchon/QuickBaluchon/backend/compt_staff.php"><button type="button" class="btn btn-warning">Compte Livreur</button></a>
+                    </div>
+                    <?php } ?>
+                    <div class="col">
+                        <a href="/QuickBaluchon/QuickBaluchon/actions/disconnect.php"><button type="button" class="btn btn-danger">Déconnexion</button></a>
+                    </div>
+                    
+                </div>
             <?php } else { ?>
                 <div class="row">
                     <div class="col">

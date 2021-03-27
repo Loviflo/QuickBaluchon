@@ -22,7 +22,7 @@ if (count($results) == 0) {
         $user = $row['username'];
 	
 		session_start();
-		$_SESSION['user'] = array('username' => $user);
+		$_SESSION['user'] = array('username' => $user,'rank' => 'deliveryman');
 
 		header('location: ../index.php');
 		exit();	

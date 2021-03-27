@@ -18,7 +18,7 @@ require_once(dirname(__DIR__) . "/bdd/database.php");
         $bdd = getDatabaseConnection();
         $q = 'SELECT username, password FROM staff WHERE username = ?';
         $req = $bdd->prepare($q);
-        $req->execute([$_SESSION['user']]);
+        $req->execute([$_SESSION['user']['username']]);
         $results = $req->fetchAll(); ?>
         <ul>
             <table class="table">
