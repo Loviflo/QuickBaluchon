@@ -23,11 +23,11 @@
                     </div>
                     <?php } else if($_SESSION['user']['rank'] == 'client') { ?>
                     <div class="col">
-                        <a href="/QuickBaluchon/QuickBaluchon/backend/compt_staff.php"><button type="button" class="btn btn-warning">Compte Client</button></a>
+                        <a href="/QuickBaluchon/QuickBaluchon/client_space.php"><button type="button" class="btn btn-warning">Compte Client</button></a>
                     </div>
                     <?php } else if($_SESSION['user']['rank'] == 'deliveryman') { ?>
                     <div class="col">
-                        <a href="/QuickBaluchon/QuickBaluchon/backend/compt_staff.php"><button type="button" class="btn btn-warning">Compte Livreur</button></a>
+                        <a href="/QuickBaluchon/QuickBaluchon/deliveryman_space.php"><button type="button" class="btn btn-warning">Compte Livreur</button></a>
                     </div>
                     <?php } ?>
                     <div class="col">
