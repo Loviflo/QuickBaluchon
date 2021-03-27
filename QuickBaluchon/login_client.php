@@ -3,10 +3,10 @@
     <head>
         <meta charset="UTF-8">
         <title>Page de connexion - Client</title>
-        <?php include("inc/head.php"); ?>
+        <?php include(dirname(__DIR__) . "/QuickBaluchon/inc/head.php"); ?>
     </head>
     <body>
-        <?php include("inc/header.php"); ?>
+        <?php include(dirname(__DIR__) . "/QuickBaluchon/inc/header.php"); ?>
         <div class="container pb-5">
         <h1 class="mt-3">Connexion à votre compte client</h1>
             <form action="actions/login_client_process.php" method="POST" class="needs-validation" novalidate>

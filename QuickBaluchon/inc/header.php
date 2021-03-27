@@ -1,8 +1,8 @@
 <header class="p-3 text-white" style="background: rgb(103,66,50);color: rgb(255,255,255);">
     <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
     <div class="text-start">
-        <a href="index.php" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-            <img src="img/Logo_SPS.png" style="width:20;height:16" alt="Logo"/>
+        <a href="/QuickBaluchon/QuickBaluchon/index.php" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+            <img src="/QuickBaluchon/QuickBaluchon/img/Logo_SPS.png" style="width:20;height:16" alt="Logo"/>
         </a>
     </div>
 
@@ -16,7 +16,7 @@
 
         <div class="text-end">
             <?php if (isset($_SESSION['user'])) { ?>
-                <a href="actions/disconnect.php"><button type="button" class="btn btn-danger">Déconnexion</button></a>
+                <a href="/QuickBaluchon/QuickBaluchon/actions/disconnect.php"><button type="button" class="btn btn-danger">Déconnexion</button></a>
             <?php } else { ?>
                 <div class="row">
                     <div class="col">

@@ -1,6 +1,8 @@
 <?php
 
-require_once '../bdd/database.php';
+// require_once '../bdd/database.php';
+require_once(dirname(__DIR__) . "/bdd/database.php");
+
 ini_set("display_errors",1);
 
 $db = getDatabaseConnection();
@@ -22,9 +24,9 @@ if (count($results) == 0) {
         $user = $row['username'];
 	
 		session_start();
-		$_SESSION['user'] = array('username' => $user);
+		$_SESSION['user'] = $user;
 
-		header('location: ../index.php');
+		header('location: ../backend/compt_staff.php');
 		exit();	
     }
 }
