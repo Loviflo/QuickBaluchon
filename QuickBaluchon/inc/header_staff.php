@@ -13,8 +13,8 @@ if (!$_SESSION['user']['rank'] == 'staff') {
     </div>
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-            <li><a href="/QuickBaluchon/QuickBaluchon/backend/accounts_management.php" class="nav-link px-2 text-white effect-shine">Gestion des comptes</a></li>
-            <li><a href="#" class="nav-link px-2 text-white effect-shine">Item 2</a></li>
+            <li><a href="/QuickBaluchon/QuickBaluchon/backend/client_accounts_management.php" class="nav-link px-2 text-white effect-shine">Gestion des comptes client</a></li>
+            <li><a href="/QuickBaluchon/QuickBaluchon/backend/deliveryman_accounts_management.php" class="nav-link px-2 text-white effect-shine">Gestion des comptes livreur</a></li>
             <li><a href="#" class="nav-link px-2 text-white effect-shine">Item 3</a></li>
             <li><a href="#" class="nav-link px-2 text-white effect-shine">Item 4</a></li>
             <li><a href="#" class="nav-link px-2 text-white effect-shine">Item 5</a></li>

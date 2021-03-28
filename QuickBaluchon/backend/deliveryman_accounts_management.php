@@ -13,10 +13,10 @@ require_once(dirname(__DIR__) . "/bdd/database.php");
     </head>
     <body>
         <?php include(dirname(__DIR__) . "/inc/header_staff.php"); ?>
-        <h1 class="display-1 text-center" style="color: #a4260a;">Gestion des comptes</h1>
+        <h1 class="display-1 text-center" style="color: #a4260a;">Gestion des comptes livreur</h1>
         <?php
         $bdd = getDatabaseConnection();
-        $q = 'SELECT company_name FROM client';
+        $q = 'SELECT username FROM deliveryman';
         $req = $bdd->prepare($q);
         $req->execute();
         $results = $req->fetchAll(); ?>
@@ -31,11 +31,11 @@ require_once(dirname(__DIR__) . "/bdd/database.php");
                 <?php foreach ($results as $key => $user) { ?>
                 <tbody>
                     <tr>
-                        <td class="text-center"><?php echo $user['company_name']; ?></td>
+                        <td class="text-center"><?php echo $user['username']; ?></td>
                         <td class="text-center">
-                            <a href="/QuickBaluchon/QuickBaluchon/backend/account_management.php?company_name=<?php echo $user['company_name']; ?>" class="btn btn-primary" role="button" style="margin: 2px;"><i class="far fa-eye"></i></a>
+                            <a href="/QuickBaluchon/QuickBaluchon/backend/deliveryman_account_management.php?username=<?php echo $user['username']; ?>" class="btn btn-primary" role="button" style="margin: 2px;"><i class="far fa-eye"></i></a>
                             <!-- <a class="btn btn-success" role="button" style="background: rgb(11,171,56);margin: 2px;"><i class="fas fa-pencil-alt"></i></a> -->
-                            <a href="/QuickBaluchon/QuickBaluchon/backend/actions/delete_account.php?company_name=<?php echo $user['company_name']; ?>" class="btn btn-danger" role="button" style="margin: 2px;"><i class="fas fa-trash"></i></a>
+                            <a href="/QuickBaluchon/QuickBaluchon/backend/actions/deliveryman_delete_account.php?username=<?php echo $user['username']; ?>" class="btn btn-danger" role="button" style="margin: 2px;"><i class="fas fa-trash"></i></a>
                         </td>
                     </tr>
                     <?php } ?>
