@@ -2,29 +2,29 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Page de connexion - Client</title>
         <?php include(dirname(__DIR__) . "/QuickBaluchon/inc/head.php"); ?>
+        <title><?php echo $site->pagesClientSide->logInClient->pageTitle; ?></title>
     </head>
     <body>
         <?php include(dirname(__DIR__) . "/QuickBaluchon/inc/header.php"); ?>
         <div class="container pb-5">
-        <h1 class="mt-3">Connexion à votre compte client</h1>
+        <h1 class="mt-3"><?php echo $site->pagesClientSide->logInClient->title; ?></h1>
             <form action="actions/login_client_process.php" method="POST" class="needs-validation" novalidate>
                 <div class="form-row">
                     <div class="col mb-3">
-                        <label for="prenom">Nom de l'entreprise</label>
-                        <input type="text" class="form-control" placeholder="Nom..." name="username" required>
-                        <div class="valid-feedback">Ok !</div>
-                        <div class="invalid-feedback">Valeur incorrecte</div>
+                        <label for="prenom"><?php echo $site->pagesClientSide->logInClient->form->usernameInput->title; ?></label>
+                        <input type="text" class="form-control" placeholder="<?php echo $site->pagesClientSide->logInClient->form->usernameInput->placeholder; ?>" name="username" required>
+                        <div class="valid-feedback"><?php echo $site->pagesClientSide->logInClient->form->usernameInput->valid; ?></div>
+                        <div class="invalid-feedback"><?php echo $site->pagesClientSide->logInClient->form->usernameInput->invalid; ?></div>
                     </div>
                     <div class="col mb-3">
-                        <label for="nom">Mot de passe</label>
-                        <input type="password" class="form-control" placeholder="Mot de passe..." name="password" required>
-                        <div class="valid-feedback">Ok !</div>
-                        <div class="invalid-feedback">Valeur incorrecte</div>
+                        <label for="nom"><?php echo $site->pagesClientSide->logInClient->form->passwordInput->title; ?></label>
+                        <input type="password" class="form-control" placeholder="<?php echo $site->pagesClientSide->logInClient->form->passwordInput->placeholder; ?>" name="password" required>
+                        <div class="valid-feedback"><?php echo $site->pagesClientSide->logInClient->form->passwordInput->valid; ?></div>
+                        <div class="invalid-feedback"><?php echo $site->pagesClientSide->logInClient->form->passwordInput->invalid; ?></div>
                     </div>
                 </div>
-                <button class="btn btn-primary" type="submit">Envoyer</button>
+                <button class="btn btn-primary" type="submit"><?php echo $site->pagesClientSide->logInClient->form->validation; ?></button>
             </form>
         </div>
         <?php if (isset($_GET['ifail'])) {

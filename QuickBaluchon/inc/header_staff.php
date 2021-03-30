@@ -13,11 +13,17 @@ if (!$_SESSION['user']['rank'] == 'staff') {
     </div>
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-            <li><a href="/QuickBaluchon/QuickBaluchon/backend/client_accounts_management.php" class="nav-link px-2 text-white effect-shine">Gestion des comptes client</a></li>
-            <li><a href="/QuickBaluchon/QuickBaluchon/backend/deliveryman_accounts_management.php" class="nav-link px-2 text-white effect-shine">Gestion des comptes livreur</a></li>
-            <li><a href="#" class="nav-link px-2 text-white effect-shine">Item 3</a></li>
-            <li><a href="#" class="nav-link px-2 text-white effect-shine">Item 4</a></li>
-            <li><a href="#" class="nav-link px-2 text-white effect-shine">Item 5</a></li>
+            <li><a href="/QuickBaluchon/QuickBaluchon/backend/client_accounts_management.php" class="nav-link px-2 text-white effect-shine"><?php echo $site->headers->headerStaff->item1; ?></a></li>
+            <li><a href="/QuickBaluchon/QuickBaluchon/backend/deliveryman_accounts_management.php" class="nav-link px-2 text-white effect-shine"><?php echo $site->headers->headerStaff->item2; ?></a></li>
+            <li><a href="#" class="nav-link px-2 text-white effect-shine"><?php echo $site->headers->headerStaff->item3; ?></a></li>
+            <li><a href="#" class="nav-link px-2 text-white effect-shine"><?php echo $site->headers->headerStaff->item4; ?></a></li>
+            <li><a href="#" class="nav-link px-2 text-white effect-shine"><?php echo $site->headers->headerStaff->item5; ?></a></li>
+            <li>
+                <select class="selectpicker form-select" data-width="fit" onchange="location = this.value;">
+                    <option value="/QuickBaluchon/QuickBaluchon/index.php">Français</option>
+                    <option value="/QuickBaluchon/QuickBaluchon/en/index.php">English</option>
+                </select>
+            </li>
         </ul>
 
         <div class="text-end">
@@ -25,11 +31,11 @@ if (!$_SESSION['user']['rank'] == 'staff') {
                 <div class="row">
                     <?php if ($_SESSION['user']['rank'] == 'staff') { ?>
                     <div class="col">
-                        <a href="/QuickBaluchon/QuickBaluchon/backend/compt_staff.php"><button type="button" class="btn btn-warning">Compte Staff</button></a>
+                        <a href="/QuickBaluchon/QuickBaluchon/backend/staff_account.php"><button type="button" class="btn btn-warning"><?php echo $site->headers->headerStaff->staffSpace; ?></button></a>
                     </div>
                     <?php } ?>
                     <div class="col">
-                        <a href="/QuickBaluchon/QuickBaluchon/actions/disconnect.php"><button type="button" class="btn btn-danger">Déconnexion</button></a>
+                        <a href="/QuickBaluchon/QuickBaluchon/actions/disconnect.php"><button type="button" class="btn btn-danger"><?php echo $site->headers->headerStaff->itemDisconnect; ?></button></a>
                     </div>
                 </div>
             <?php } ?>
@@ -40,4 +46,3 @@ if (!$_SESSION['user']['rank'] == 'staff') {
     echo "<p class='alert'>" . $_GET['msg'] . "</p>";
 }
 ?>
-

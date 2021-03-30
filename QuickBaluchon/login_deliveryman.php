@@ -2,29 +2,29 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Page de connexion - Livreur</title>
         <?php include("inc/head.php"); ?>
+        <title><?php echo $site->pagesClientSide->logInDeliveryman->pageTitle; ?></title>
     </head>
     <body>
         <?php include("inc/header.php"); ?>
         <div class="container pb-5">
-        <h1 class="mt-3">Connexion à votre compte livreur</h1>
+        <h1 class="mt-3"><?php echo $site->pagesClientSide->logInDeliveryman->title; ?></h1>
             <form action="actions/login_deliveryman_process.php" method="POST" class="needs-validation" novalidate>
                 <div class="form-row">
                     <div class="col mb-3">
-                        <label for="prenom">Votre nom</label>
-                        <input type="text" class="form-control" placeholder="Nom..." name="username" required>
-                        <div class="valid-feedback">Ok !</div>
-                        <div class="invalid-feedback">Valeur incorrecte</div>
+                        <label for="prenom"><?php echo $site->pagesClientSide->logInDeliveryman->form->usernameInput->title; ?></label>
+                        <input type="text" class="form-control" placeholder="<?php echo $site->pagesClientSide->logInDeliveryman->form->usernameInput->placeholder; ?>" name="username" required>
+                        <div class="valid-feedback"><?php echo $site->pagesClientSide->logInDeliveryman->form->usernameInput->valid; ?></div>
+                        <div class="invalid-feedback"><?php echo $site->pagesClientSide->logInDeliveryman->form->usernameInput->invalid; ?></div>
                     </div>
                     <div class="col mb-3">
-                        <label for="nom">Mot de passe</label>
-                        <input type="password" class="form-control" placeholder="Mot de passe..." name="password" required>
-                        <div class="valid-feedback">Ok !</div>
-                        <div class="invalid-feedback">Valeur incorrecte</div>
+                        <label for="nom"><?php echo $site->pagesClientSide->logInDeliveryman->form->passwordInput->title; ?></label>
+                        <input type="password" class="form-control" placeholder="<?php echo $site->pagesClientSide->logInDeliveryman->form->passwordInput->placeholder; ?>" name="password" required>
+                        <div class="valid-feedback"><?php echo $site->pagesClientSide->logInDeliveryman->form->passwordInput->valid; ?></div>
+                        <div class="invalid-feedback"><?php echo $site->pagesClientSide->logInDeliveryman->form->passwordInput->invalid; ?></div>
                     </div>
                 </div>
-                <button class="btn btn-primary" type="submit">Envoyer</button>
+                <button class="btn btn-primary" type="submit"><?php echo $site->pagesClientSide->logInDeliveryman->form->validation; ?></button>
             </form>
         </div>
         <?php if (isset($_GET['ifail'])) {

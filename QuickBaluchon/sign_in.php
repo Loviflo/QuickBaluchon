@@ -19,7 +19,7 @@
                 </div>
                 <div class="col-md-4 text-center align-middle">
                     <h4>A delivery man ?</h4>
-                    <a href="sign_in_delivery.php"><button type="submit" class="btn btn-primary">Click here</button></a>
+                    <a href="sign_in_deliveryman.php"><button type="submit" class="btn btn-primary">Click here</button></a>
                 </div>
             </div>
         </div>

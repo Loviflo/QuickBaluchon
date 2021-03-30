@@ -28,8 +28,9 @@
             </div>
             <div class="form-group mb-3">
                 <label for="CV">Your CV</label>
-                <input type="file" class="form-control" id="CV" placeholder="Choose a file" name="CV" required>
+                <input type="file" class="form-control" id="CV" name="CV" required>
             </div>
+            
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>

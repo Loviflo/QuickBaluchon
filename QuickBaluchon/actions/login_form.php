@@ -26,7 +26,7 @@ if (count($results) == 0) {
 		session_start();
 		$_SESSION['user'] = array('username' => $user,'rank' => 'staff');
 
-		header('location: ../backend/compt_staff.php');
+		header('location: ../backend/staff_account.php');
 		exit();	
     }
 }

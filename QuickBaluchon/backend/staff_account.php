@@ -8,12 +8,13 @@ require_once(dirname(__DIR__) . "/bdd/database.php");
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Accueil</title>
         <?php include(dirname(__DIR__) . "/inc/head.php"); ?>
+        <title><?php echo $site->pagesAdminSide->staffAccount->pageTitle; ?></title>
     </head>
     <body>
-        <?php include(dirname(__DIR__) . "/inc/header_staff.php"); ?>
-        <h1 class="display-1 text-center" style="color: #a4260a;">Espace Staff</h1>
+        <?php 
+        include(dirname(__DIR__) . "/inc/header_staff.php"); ?>
+        <h1 class="display-1 text-center" style="color: #a4260a;"><?php echo $site->pagesAdminSide->staffAccount->title; ?></h1>
         <?php
         $bdd = getDatabaseConnection();
         $q = 'SELECT username, password FROM staff WHERE username = ?';

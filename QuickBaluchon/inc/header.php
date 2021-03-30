@@ -7,11 +7,17 @@
     </div>
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-            <li><a href="#" class="nav-link px-2 text-white effect-shine">Item 1</a></li>
-            <li><a href="#" class="nav-link px-2 text-white effect-shine">Item 2</a></li>
-            <li><a href="#" class="nav-link px-2 text-white effect-shine">Item 3</a></li>
-            <li><a href="#" class="nav-link px-2 text-white effect-shine">Item 4</a></li>
-            <li><a href="#" class="nav-link px-2 text-white effect-shine">Item 5</a></li>
+            <li><a href="#" class="nav-link px-2 text-white effect-shine"><?php echo $site->headers->header->item1; ?></a></li>
+            <li><a href="#" class="nav-link px-2 text-white effect-shine"><?php echo $site->headers->header->item2; ?></a></li>
+            <li><a href="#" class="nav-link px-2 text-white effect-shine"><?php echo $site->headers->header->item3; ?></a></li>
+            <li><a href="#" class="nav-link px-2 text-white effect-shine"><?php echo $site->headers->header->item4; ?></a></li>
+            <li><a href="#" class="nav-link px-2 text-white effect-shine"><?php echo $site->headers->header->item5; ?></a></li>
+            <li>
+                <select class="selectpicker form-select" data-width="fit" onchange="location = this.value;">
+                    <option value="/QuickBaluchon/QuickBaluchon/index.php">Français</option>
+                    <option value="/QuickBaluchon/QuickBaluchon/en/index.php">English</option>
+                </select>
+            </li>
         </ul>
 
         <div class="text-end">
@@ -19,19 +25,19 @@
                 <div class="row">
                     <?php if ($_SESSION['user']['rank'] == 'staff') { ?>
                     <div class="col">
-                        <a href="/QuickBaluchon/QuickBaluchon/backend/compt_staff.php"><button type="button" class="btn btn-warning">Compte Staff</button></a>
+                        <a href="/QuickBaluchon/QuickBaluchon/backend/staff_account.php"><button type="button" class="btn btn-warning"><?php echo $site->headers->header->itemClientSpace->staff; ?></button></a>
                     </div>
                     <?php } else if($_SESSION['user']['rank'] == 'client') { ?>
                     <div class="col">
-                        <a href="/QuickBaluchon/QuickBaluchon/client_space.php"><button type="button" class="btn btn-warning">Compte Client</button></a>
+                        <a href="/QuickBaluchon/QuickBaluchon/client_space.php"><button type="button" class="btn btn-warning"><?php echo $site->headers->header->itemClientSpace->client; ?></button></a>
                     </div>
                     <?php } else if($_SESSION['user']['rank'] == 'deliveryman') { ?>
                     <div class="col">
-                        <a href="/QuickBaluchon/QuickBaluchon/deliveryman_space.php"><button type="button" class="btn btn-warning">Compte Livreur</button></a>
+                        <a href="/QuickBaluchon/QuickBaluchon/deliveryman_space.php"><button type="button" class="btn btn-warning"><?php echo $site->headers->header->itemClientSpace->deliveryman; ?></button></a>
                     </div>
                     <?php } ?>
                     <div class="col">
-                        <a href="/QuickBaluchon/QuickBaluchon/actions/disconnect.php"><button type="button" class="btn btn-danger">Déconnexion</button></a>
+                        <a href="/QuickBaluchon/QuickBaluchon/actions/disconnect.php"><button type="button" class="btn btn-danger"><?php echo $site->headers->header->itemDisconnect; ?></button></a>
                     </div>
                     
                 </div>
@@ -39,19 +45,19 @@
                 <div class="row">
                     <div class="col">
                         <div class="dropdown">
-                        <a aria-expanded="false" data-bs-toggle="dropdown" class="btn btn-outline-light me-2 dropdown-toggle" href="#">Connexion</a>
+                        <a aria-expanded="false" data-bs-toggle="dropdown" class="btn btn-outline-light me-2 dropdown-toggle" href="#"><?php echo $site->headers->header->itemLogIn->title; ?></a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="login_client.php">Client</a>
-                                <a class="dropdown-item" href="login_deliveryman.php">Livreur</a>
+                                <a class="dropdown-item" href="login_client.php"><?php echo $site->headers->header->itemLogIn->client; ?></a>
+                                <a class="dropdown-item" href="login_deliveryman.php"><?php echo $site->headers->header->itemLogIn->deliveryman; ?></a>
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="dropdown">
-                            <a aria-expanded="false" data-bs-toggle="dropdown" class="btn btn-warning me-2 dropdown-toggle" href="#">Inscription</a>
+                            <a aria-expanded="false" data-bs-toggle="dropdown" class="btn btn-warning me-2 dropdown-toggle" href="#"><?php echo $site->headers->header->itemSignIn->title; ?></a>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="sign_in_company.php">Client</a>
-                                    <a class="dropdown-item" href="sign_in_delivery.php">Livreur</a>
+                                    <a class="dropdown-item" href="sign_in_company.php"><?php echo $site->headers->header->itemSignIn->client; ?></a>
+                                    <a class="dropdown-item" href="sign_in_deliveryman.php"><?php echo $site->headers->header->itemSignIn->deliveryman; ?></a>
                                 </div>
                             </div>
                         </div>
