@@ -8,12 +8,12 @@ require_once(dirname(__DIR__) . "/bdd/database.php");
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <title>Accueil</title>
         <?php include(dirname(__DIR__) . "/inc/head.php"); ?>
+        <title><?php echo $site->pagesAdminSide->clientAccountsManagement->pageTitle; ?></title>
     </head>
     <body>
         <?php include(dirname(__DIR__) . "/inc/header_staff.php"); ?>
-        <h1 class="display-1 text-center" style="color: #a4260a;">Gestion des comptes client</h1>
+        <h1 class="display-1 text-center" style="color: #a4260a;"><?php echo $site->pagesAdminSide->clientAccountsManagement->title; ?></h1>
         <?php
         $bdd = getDatabaseConnection();
         $q = 'SELECT company_name FROM client';
@@ -24,8 +24,8 @@ require_once(dirname(__DIR__) . "/bdd/database.php");
             <table class="table">
                 <thead class="thead-dark">
                 <tr>
-                    <th scope="col" class="text-center">Nom de l'entreprise</th>
-                    <th scope="col" class="text-center">Actions</th>
+                    <th scope="col" class="text-center"><?php echo $site->pagesAdminSide->clientAccountsManagement->table->th1; ?></th>
+                    <th scope="col" class="text-center"><?php echo $site->pagesAdminSide->clientAccountsManagement->table->th2; ?></th>
                 </tr>
                 </thead>
                 <?php foreach ($results as $key => $user) { ?>
@@ -48,15 +48,15 @@ require_once(dirname(__DIR__) . "/bdd/database.php");
         <div class="modal-dialog">
             <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Suppresion de compte</h5>
+                <h5 class="modal-title"><?php echo $site->pagesAdminSide->clientAccountsManagement->table->modal->title; ?></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                Etes-vous sûr de vouloir supprimer ce compte ?
+                <?php echo $site->pagesAdminSide->clientAccountsManagement->table->modal->text; ?>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-                <a id="deleteURL" href=""><button type="button" class="btn btn-danger">Confirmer</button></a>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?php echo $site->pagesAdminSide->clientAccountsManagement->table->modal->cancelButton; ?></button>
+                <a id="deleteURL" href=""><button type="button" class="btn btn-danger"><?php echo $site->pagesAdminSide->clientAccountsManagement->table->modal->confirmButton; ?></button></a>
             </div>
             </div>
         </div>

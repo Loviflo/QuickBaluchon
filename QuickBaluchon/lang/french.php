@@ -184,12 +184,74 @@ $xmlstr = <<<XML
                 <validation>Envoyer</validation>
             </form>
         </signInDeliveryman>
+        <clientSpace>
+            <pageTitle>Espace Client</pageTitle>
+            <title>Espace Client</title>
+        </clientSpace>
+        <deliverymanSpace>
+            <pageTitle>Espace Livreur</pageTitle>
+            <title>Espace Livreur</title>
+        </deliverymanSpace>
     </pagesClientSide>
     <pagesAdminSide>
         <staffAccount>
             <pageTitle>Compte staff</pageTitle>
             <title>Espace Staff</title>
         </staffAccount>
+        <clientAccountsManagement>
+            <pageTitle>Gestion des comptes client</pageTitle>
+            <title>Gestion des comptes client</title>
+            <table>
+                <th1>Nom de l'entreprise</th1>
+                <th2>Actions</th2>
+                <modal>
+                    <title>Suppresion de compte</title>
+                    <text>Etes-vous sûr de vouloir supprimer ce compte ?</text>
+                    <cancelButton>Annuler</cancelButton>
+                    <confirmButton>Confirmer</confirmButton>
+                </modal>
+            </table>
+        </clientAccountsManagement>
+        <clientAccountManagement>
+            <pageTitle>Gestion du compte client</pageTitle>
+            <title>Gestion du compte</title>
+            <card>
+                <username>Nom de l'entreprise : </username>
+                <mail>Mail : </mail>
+                <billingAddress>Adresse de facturation : </billingAddress>
+                <siretNumber>Numéro de SIRET : </siretNumber>
+                <motives>Motivations : </motives>
+            </card>
+        </clientAccountManagement>
+        <deliverymanAccountsManagement>
+            <pageTitle>Gestion des comptes livreur</pageTitle>
+            <title>Gestion des comptes livreur</title>
+            <table>
+                <th1>Nom d'utilisateur</th1>
+                <th2>Actions</th2>
+                <modal>
+                    <title>Suppresion de compte</title>
+                    <text>Etes-vous sûr de vouloir supprimer ce compte ?</text>
+                    <cancelButton>Annuler</cancelButton>
+                    <confirmButton>Confirmer</confirmButton>
+                </modal>
+            </table>
+        </deliverymanAccountsManagement>
+        <deliverymanAccountManagement>
+            <pageTitle>Gestion du compte livreur</pageTitle>
+            <title>Gestion du compte</title>
+            <card>
+                <username>Nom d'utilisateur : </username>
+                <mail>Mail : </mail>
+                <deliveryDistance>Distance de livraison : </deliveryDistance>
+                <kilometersNumber>Nombre de kilomètres : </kilometersNumber>
+                <packagesNumber>Nombre de colis : </packagesNumber>
+                <IBAN>IBAN : </IBAN>
+                <vehicleType>Type de véhicule : </vehicleType>
+                <vehicleBrand>Marque du véhicule : </vehicleBrand>
+                <vehicleCapacity>Capacité du véhicule : </vehicleCapacity>
+            </card>
+        </deliverymanAccountManagement>
     </pagesAdminSide>
 </site>
 XML;

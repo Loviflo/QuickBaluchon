@@ -15,7 +15,7 @@
             <div class="row justify-content-center">
                 <div class="col-md-4 text-center align-middle">
                     <h4>A company ?</h4>
-                    <a href="sign_in_company.php"><button type="submit" class="btn btn-primary">Click here</button></a>
+                    <a href="signInCompany.php"><button type="submit" class="btn btn-primary">Click here</button></a>
                 </div>
                 <div class="col-md-4 text-center align-middle">
                     <h4>A delivery man ?</h4>

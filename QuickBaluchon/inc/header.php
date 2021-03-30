@@ -5,7 +5,10 @@
             <img src="/QuickBaluchon/QuickBaluchon/img/Logo_SPS.png" style="width:20;height:16" alt="Logo"/>
         </a>
     </div>
-
+        <?php 
+           echo $lang = $_SESSION['lang'] == 'fr' ? 'en' : 'fr';
+        
+        ?>
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
             <li><a href="#" class="nav-link px-2 text-white effect-shine"><?php echo $site->headers->header->item1; ?></a></li>
             <li><a href="#" class="nav-link px-2 text-white effect-shine"><?php echo $site->headers->header->item2; ?></a></li>
@@ -14,12 +17,11 @@
             <li><a href="#" class="nav-link px-2 text-white effect-shine"><?php echo $site->headers->header->item5; ?></a></li>
             <li>
                 <select class="selectpicker form-select" data-width="fit" onchange="location = this.value;">
-                    <option value="/QuickBaluchon/QuickBaluchon/index.php">Français</option>
-                    <option value="/QuickBaluchon/QuickBaluchon/en/index.php">English</option>
+                    <option value="/QuickBaluchon/QuickBaluchon/index.php" id="fr" onclick="<?php $_SESSION['lang'] = $lang ?>"><?php echo $lang == 'fr' ? 'English' : 'Français'; ?></option>
+                    <option value="/QuickBaluchon/QuickBaluchon/index.php" id="en" onclick="<?php $_SESSION['lang'] = $lang ?>"><?php echo $lang == 'en' ? 'English' : 'Français'; ?></option>
                 </select>
             </li>
         </ul>
-
         <div class="text-end">
             <?php if (isset($_SESSION['user'])) { ?>
                 <div class="row">
@@ -56,8 +58,8 @@
                         <div class="dropdown">
                             <a aria-expanded="false" data-bs-toggle="dropdown" class="btn btn-warning me-2 dropdown-toggle" href="#"><?php echo $site->headers->header->itemSignIn->title; ?></a>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="sign_in_company.php"><?php echo $site->headers->header->itemSignIn->client; ?></a>
-                                    <a class="dropdown-item" href="sign_in_deliveryman.php"><?php echo $site->headers->header->itemSignIn->deliveryman; ?></a>
+                                    <a class="dropdown-item" href="signIn_client.php"><?php echo $site->headers->header->itemSignIn->client; ?></a>
+                                    <a class="dropdown-item" href="signIn_deliveryman.php"><?php echo $site->headers->header->itemSignIn->deliveryman; ?></a>
                                 </div>
                             </div>
                         </div>

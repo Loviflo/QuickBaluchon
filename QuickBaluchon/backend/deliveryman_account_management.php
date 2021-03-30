@@ -7,12 +7,12 @@ require_once(dirname(__DIR__) . "/bdd/database.php");
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Accueil</title>
         <?php include(dirname(__DIR__) . "/inc/head.php"); ?>
+        <title><?php echo $site->pagesAdminSide->deliverymanAccountManagement->pageTitle; ?></title>
     </head>
     <body>
         <?php include(dirname(__DIR__) . "/inc/header_staff.php"); ?>
-        <h1 class="display-1 text-center" style="color: #a4260a;">Gestion du compte</h1>
+        <h1 class="display-1 text-center" style="color: #a4260a;"><?php echo $site->pagesAdminSide->deliverymanAccountManagement->title; ?></h1>
         <?php
         $bdd = getDatabaseConnection();
         $q = "SELECT username, del_email, delivery_range,nb_km,nb_pck,iban,cv,vehicle_type,vehicle_brand,vehicle_capacity FROM deliveryman WHERE username = '" . $_GET['username'] . "'";
@@ -29,15 +29,15 @@ require_once(dirname(__DIR__) . "/bdd/database.php");
                         </div>
                         <div class="col-md-8 px-3">
                             <div class="card-block px-3">
-                            <h4 class="card-title"><b>Nom d'utilisateur : </b><?php echo $result['username']; ?></h4>
-                            <p class="card-text"><b>Mail : </b><?php echo $result['del_email']; ?></p>
-                            <p class="card-text"><b>Distance de livraison : </b><?php echo $result['delivery_range']; ?> Km</p>
-                            <p class="card-text"><b>Nombre de kilomètres : </b><?php echo $result['nb_km']; ?> Km</p>
-                            <p class="card-text"><b>Nombre de colis : </b><?php echo $result['nb_pck']; ?></p>
-                            <p class="card-text"><b>IBAN : </b><?php echo $result['iban']; ?></p>
-                            <p class="card-text"><b>Type de véhicule : </b><?php echo $result['vehicle_type']; ?></p>
-                            <p class="card-text"><b>Marque du véhicule : </b><?php echo $result['vehicle_brand']; ?></p>
-                            <p class="card-text"><b>Capacité du véhicule : </b><?php echo $result['vehicle_capacity']; ?> L</p>
+                            <h4 class="card-title"><b><?php echo $site->pagesAdminSide->deliverymanAccountManagement->card->username; ?></b><?php echo $result['username']; ?></h4>
+                            <p class="card-text"><b><?php echo $site->pagesAdminSide->deliverymanAccountManagement->card->mail; ?></b><?php echo $result['del_email']; ?></p>
+                            <p class="card-text"><b><?php echo $site->pagesAdminSide->deliverymanAccountManagement->card->deliveryDistance; ?></b><?php echo $result['delivery_range']; ?> Km</p>
+                            <p class="card-text"><b><?php echo $site->pagesAdminSide->deliverymanAccountManagement->card->kilometersNumber; ?></b><?php echo $result['nb_km']; ?> Km</p>
+                            <p class="card-text"><b><?php echo $site->pagesAdminSide->deliverymanAccountManagement->card->packagesNumber; ?></b><?php echo $result['nb_pck']; ?></p>
+                            <p class="card-text"><b><?php echo $site->pagesAdminSide->deliverymanAccountManagement->card->IBAN; ?></b><?php echo $result['iban']; ?></p>
+                            <p class="card-text"><b><?php echo $site->pagesAdminSide->deliverymanAccountManagement->card->vehicleType; ?></b><?php echo $result['vehicle_type']; ?></p>
+                            <p class="card-text"><b><?php echo $site->pagesAdminSide->deliverymanAccountManagement->card->vehicleBrand; ?></b><?php echo $result['vehicle_brand']; ?></p>
+                            <p class="card-text"><b><?php echo $site->pagesAdminSide->deliverymanAccountManagement->card->vehicleCapacity; ?></b><?php echo $result['vehicle_capacity']; ?> L</p>
                         </div>
                     </div>
                 </div>
