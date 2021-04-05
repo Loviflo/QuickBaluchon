@@ -29,7 +29,7 @@ $xmlstr = <<<XML
         <headerStaff>
             <item1>Customer account management</item1>
             <item2>Deliveryman account management</item2>
-            <item3>Item 3</item3>
+            <item3>Application management</item3>
             <item4>Item 4</item4>
             <item5>Item 5</item5>
             <staffSpace>Staff account</staffSpace>
@@ -252,6 +252,10 @@ $xmlstr = <<<XML
                 <vehicleCapacity>Vehicle capacity : </vehicleCapacity>
             </card>
         </deliverymanAccountManagement>
+        <applicationManagement>
+            <pageTitle>Application management</pageTitle>
+            <title>Application management</title>
+        </applicationManagement>
     </pagesAdminSide>
 </site>
 XML;

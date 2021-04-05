@@ -9,7 +9,7 @@
     <?php include("inc/header.php"); ?>
     <div class="container">
         <h1 class="mt-3"><?php echo $site->pagesClientSide->signInDeliveryman->title; ?></h1>
-        <form action="delivery_form.php" method="post" enctype="multipart/form-data">
+        <form action="actions/delivery_form.php" method="post" enctype="multipart/form-data">
             <div class="form-group mb-3">
                 <label for="username"><?php echo $site->pagesClientSide->signInDeliveryman->form->usernameInput->title; ?></label>
                 <input type="text" class="form-control" id="username" placeholder="<?php echo $site->pagesClientSide->signInDeliveryman->form->usernameInput->placeholder; ?>" name="username" required>
@@ -28,7 +28,7 @@
             </div>
             <div class="form-group mb-3">
                 <label for="CV"><?php echo $site->pagesClientSide->signInDeliveryman->form->fileInput->title; ?></label>
-                <input type="file" class="form-control" id="CV" name="CV" required>
+                <input type="file" class="form-control" accept=".pdf,.docx,.doc" id="CV" name="CV" required>
             </div>
             
             <button type="submit" class="btn btn-primary"><?php echo $site->pagesClientSide->signInDeliveryman->form->validation; ?></button>

@@ -29,7 +29,7 @@ $xmlstr = <<<XML
         <headerStaff>
             <item1>Gestion des comptes client</item1>
             <item2>Gestion des comptes livreur</item2>
-            <item3>Item 3</item3>
+            <item3>Gestion des candidatures</item3>
             <item4>Item 4</item4>
             <item5>Item 5</item5>
             <staffSpace>Compte Staff</staffSpace>
@@ -252,6 +252,22 @@ $xmlstr = <<<XML
                 <vehicleCapacity>Capacité du véhicule : </vehicleCapacity>
             </card>
         </deliverymanAccountManagement>
+        <applicationManagement>
+            <pageTitle>Gestion des candidatures</pageTitle>
+            <title>Gestion des candidatures</title>
+            <subtitle1>Clients</subtitle1>
+            <subtitle2>Livreurs</subtitle2>
+            <table>
+                <th1>Nom d'utilisateur</th1>
+                <th2>Actions</th2>
+                <modal>
+                    <title>Suppresion de compte</title>
+                    <text>Etes-vous sûr de vouloir supprimer ce compte ?</text>
+                    <cancelButton>Annuler</cancelButton>
+                    <confirmButton>Confirmer</confirmButton>
+                </modal>
+            </table>
+        </applicationManagement>
     </pagesAdminSide>
 </site>
 XML;

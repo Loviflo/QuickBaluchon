@@ -7,9 +7,10 @@
     </head>
     <body>
         <?php include("inc/header.php"); ?>
+        <?php echo $_GET['msg']; ?>
         <div class="container">
             <h1 class="mt-3"><?php echo $site->pagesClientSide->signInClient->title; ?></h1>
-            <form action="company_form.php" method="post">
+            <form action="actions/company_form.php" method="post">
                 <div class="form-group mb-3">
                     <label for="name"><?php echo $site->pagesClientSide->signInClient->form->usernameInput->title; ?></label>
                     <input type="text" class="form-control" id="name" placeholder="<?php echo $site->pagesClientSide->signInClient->form->usernameInput->placeholder; ?>" name="name" required>

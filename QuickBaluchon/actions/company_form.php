@@ -1,5 +1,8 @@
 <?php
-require_once('bdd/database.php');
+require_once('../bdd/database.php');
+ini_set("display_errors",1);
+
+$db = getDatabaseConnection();
 
 if (isset($_POST['name']) &&
     isset($_POST['password']) &&
@@ -14,20 +17,13 @@ if (isset($_POST['name']) &&
     $email = htmlspecialchars($_POST['email']);
     $siret = htmlspecialchars($_POST['siret']);
     $motives = htmlspecialchars($_POST['motives']);
-    $bdd = getDatabaseConnection();
-    $q = 'INSERT INTO client (company_name,cli_pwd,mail,siret_nb,motives) VALUES (:val1, :val2, :val3, :val4, :val5)';
-    $req = $bdd->prepare($q);
-    $req->execute([
-        "val1" => $name,
-        "val2" => hash("sha512",$password),
-        "val3" => $email,
-        "val4" => $siret,
-        "val5" => $motives
-    ]);
+    $q = 'INSERT INTO client (company_name,cli_pwd,mail,siret_nb,motives) VALUES (?, ?, ?, ?, ?)';
+    $req = $db->prepare($q);
+    $req->execute([$name,hash("sha512",$password),$email,$siret,$motives]);
 
-    header("location:index.php?msg=".' '.$name .' '. $password.' '. $email .' '. $siret .' '.  $motives);
+    header("location:../index.php");
     exit;
 }else{
-    header("location:index.php?msg=Error");
+    header("location:../signIn_client.php?msg=Error");
     exit;
 }
