@@ -5,9 +5,6 @@
             <img src="/QuickBaluchon/QuickBaluchon/img/Logo_SPS.png" style="width:20;height:16" alt="Logo"/>
         </a>
     </div>
-        <?php 
-           $lang = $_SESSION['lang'] == 'fr' ? 'en' : 'fr';
-        ?>
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
             <li><a href="#" class="nav-link px-2 text-white effect-shine"><?php echo $site->headers->header->item1; ?></a></li>
             <li><a href="#" class="nav-link px-2 text-white effect-shine"><?php echo $site->headers->header->item2; ?></a></li>
@@ -15,10 +12,19 @@
             <li><a href="#" class="nav-link px-2 text-white effect-shine"><?php echo $site->headers->header->item4; ?></a></li>
             <li><a href="#" class="nav-link px-2 text-white effect-shine"><?php echo $site->headers->header->item5; ?></a></li>
             <li>
-                <select class="selectpicker form-select" data-width="fit" onchange="location = this.value;">
-                    <option value="/QuickBaluchon/QuickBaluchon/index.php" id="fr" onclick="<?php $_SESSION['lang'] = $lang ?>"><?php echo $lang == 'fr' ? 'English' : 'Français'; ?></option>
-                    <option value="/QuickBaluchon/QuickBaluchon/index.php" id="en" onclick="<?php $_SESSION['lang'] = $lang ?>"><?php echo $lang == 'en' ? 'English' : 'Français'; ?></option>
-                </select>
+                <form id="formulaire_langue" action="" method="get">
+                    <select name="lang" onChange="document.getElementById('formulaire_langue').submit();">
+                        <?php
+                            if($_SESSION['lang'] == 'fr' || !isset($_SESSION['lang'])){
+                                echo "<option value='fr' selected='selected'>Français</option>";
+                                echo "<option value='en'>English</option>";
+                            } else if($_SESSION['lang'] == 'en'){
+                                echo "<option value='en' selected='selected'>English</option>";
+                                echo "<option value='fr'>Français</option>";
+                            }
+                        ?>
+                    </select>
+                </form>
             </li>
         </ul>
         <div class="text-end">

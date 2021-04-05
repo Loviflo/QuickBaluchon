@@ -1,6 +1,5 @@
 <?php
 ini_set('display_errors', 1);
-session_start();
 // $_SESSION['user'] = 'Odin';
 require_once(dirname(__DIR__) . "/bdd/database.php");
 ?>

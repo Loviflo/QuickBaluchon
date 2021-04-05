@@ -255,6 +255,18 @@ $xmlstr = <<<XML
         <applicationManagement>
             <pageTitle>Application management</pageTitle>
             <title>Application management</title>
+            <subtitle1>Clients</subtitle1>
+            <subtitle2>Deliverymen</subtitle2>
+            <table>
+                <th1>Username</th1>
+                <th2>Actions</th2>
+                <modal>
+                    <title>Account deletion</title>
+                    <text>Are you sure you want to delete this account ?</text>
+                    <cancelButton>Cancel</cancelButton>
+                    <confirmButton>Confirm</confirmButton>
+                </modal>
+            </table>
         </applicationManagement>
     </pagesAdminSide>
 </site>

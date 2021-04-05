@@ -19,10 +19,19 @@ if (!$_SESSION['user']['rank'] == 'staff') {
             <li><a href="#" class="nav-link px-2 text-white effect-shine"><?php echo $site->headers->headerStaff->item4; ?></a></li>
             <li><a href="#" class="nav-link px-2 text-white effect-shine"><?php echo $site->headers->headerStaff->item5; ?></a></li>
             <li>
-                <select class="selectpicker form-select" data-width="fit" onchange="location = this.value;">
-                    <option value="/QuickBaluchon/QuickBaluchon/index.php">Français</option>
-                    <option value="/QuickBaluchon/QuickBaluchon/en/index.php">English</option>
-                </select>
+            <form id="formulaire_langue" action="" method="get">
+                    <select name="lang" onChange="document.getElementById('formulaire_langue').submit();">
+                        <?php
+                            if($_SESSION['lang'] == 'fr' || !isset($_SESSION['lang'])){
+                                echo "<option value='fr' selected='selected'>Français</option>";
+                                echo "<option value='en'>English</option>";
+                            } else if($_SESSION['lang'] == 'en'){
+                                echo "<option value='en' selected='selected'>English</option>";
+                                echo "<option value='fr'>Français</option>";
+                            }
+                        ?>
+                    </select>
+                </form>
             </li>
         </ul>
 

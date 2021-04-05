@@ -1,4 +1,10 @@
     <?php
+        session_start();
+        if(!isset($_GET['lang'])){
+            $_GET['lang'] = $_SESSION['lang']; 
+        } else {
+            $_SESSION['lang'] = $_GET['lang'];   
+        }
         if (!isset($_SESSION['lang']) || $_SESSION['lang'] == 'fr'){
             include(dirname(__DIR__) . "/lang/french.php");
             $site = new SimpleXMLElement($xmlstr);
