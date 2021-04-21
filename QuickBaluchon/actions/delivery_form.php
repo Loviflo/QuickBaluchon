@@ -1,5 +1,5 @@
 <?php
-require_once('bdd/database.php');
+require_once('../bdd/database.php');
 
 $allowed_types = array(
     'application/msword',
@@ -17,7 +17,7 @@ if (isset($_POST['username']) &&
     $username = htmlspecialchars($_POST['username']);
     $password = $_POST['password'];
     $email = htmlspecialchars($_POST['email']);
-    $path = 'uploads';
+    $path = '../uploads';
 
     if(!file_exists($path)){
         mkdir($path, 0777, true);
@@ -37,9 +37,9 @@ if (isset($_POST['username']) &&
         "val3" => $email,
         "val4" => $cv_path
     ]);
-    header("location:index.php?msg=Success");
+    header("location:../index.php?msg=Success");
     exit;
 }else{
-    header("location:index.php?msg=Error");
+    header("location:../index.php?msg=Error");
     exit;
 }

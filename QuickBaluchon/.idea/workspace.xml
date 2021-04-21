@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="ff9b8dda-1718-4ebf-8a3a-8490e126664b" name="Default Changelist" comment="Updated sql queries for deliveryman sign in">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/company_form.php" beforeDir="false" afterPath="$PROJECT_DIR$/company_form.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_form.php" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_form.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/actions/delivery_form.php" beforeDir="false" afterPath="$PROJECT_DIR$/actions/delivery_form.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signIn_client.php" beforeDir="false" afterPath="$PROJECT_DIR$/signIn_client.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +42,9 @@
       <updated>1615899732914</updated>
       <workItem from="1615899734295" duration="28000" />
       <workItem from="1616492620084" duration="5376000" />
+      <workItem from="1619006938669" duration="444000" />
+      <workItem from="1619007475672" duration="3378000" />
+      <workItem from="1619010956193" duration="600000" />
     </task>
     <task id="LOCAL-00001" summary="Update sql queries">
       <created>1616495259671</created>

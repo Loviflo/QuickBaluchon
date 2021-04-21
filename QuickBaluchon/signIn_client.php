@@ -7,7 +7,8 @@
     </head>
     <body>
         <?php include("inc/header.php"); ?>
-        <?php echo $_GET['msg']; ?>
+        <?php
+        echo isset($_GET['msg'])?$_GET['msg']:null; ?>
         <div class="container">
             <h1 class="mt-3"><?php echo $site->pagesClientSide->signInClient->title; ?></h1>
             <form action="actions/company_form.php" method="post">
