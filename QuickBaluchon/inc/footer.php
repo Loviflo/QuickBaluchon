@@ -7,6 +7,7 @@
     © 2021 Copyright :
     <a class="text-white" href="index.php">SPS</a>
   </div> -->
+  <script src="/QuickBaluchon/QuickBaluchon/js/footerForm.js" defer></script>
   <?php if (isset($_SESSION['user'])) { ?>
   <div class="pt-3 row">
   <p class="justify-content-center align-items-center">
@@ -70,29 +71,6 @@
   <?php } ?>
   <!-- Copyright -->
 </footer>
-<script>
-/*La fonction principale de ce script est d'empêcher l'envoi du formulaire si un champ a été mal rempli
-*et d'appliquer les styles de validation aux différents éléments de formulaire*/
-(function() {
-    'use strict';
-    window.addEventListener('load', function() {
-    let forms = document.getElementsByClassName('needs-validation');
-    let dropMenu = document.getElementById('dropMenu');
-    let validation = Array.prototype.filter.call(forms, function(form) {
-        form.addEventListener('submit', function(event) {
-        if (form.checkValidity() === false) {
-            event.preventDefault();
-            event.stopPropagation();
-            dropMenu.classList.add('show');
-        } else {
-          dropMenu.classList.remove('show');
-        }
-        form.classList.add('was-validated');
-        }, false);
-    });
-    }, false);
-})();
-</script>
 <script 
   src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" 
   integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" 

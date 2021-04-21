@@ -1,5 +1,8 @@
     <?php
         session_start();
+        if (!isset($_SESSION['lang'])) {
+            $_SESSION['lang'] = null;
+        }
         if(!isset($_GET['lang'])){
             $_GET['lang'] = $_SESSION['lang']; 
         } else {

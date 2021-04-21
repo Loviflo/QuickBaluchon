@@ -1,6 +1,5 @@
 <?php
 ini_set('display_errors', 1);
-session_start();
 ?>
 
 <!DOCTYPE html>
@@ -13,6 +12,8 @@ session_start();
         <?php include(dirname(__DIR__) . "/QuickBaluchon//inc/header.php"); ?>
         <h1 class="display-1 text-center" style="color: #a4260a;"><?php echo $site->pagesClientSide->deliverymanSpace->title; ?></h1>
         <?php include(dirname(__DIR__) . "/QuickBaluchon//inc/footer.php"); ?>
-        
+        <form action="actions/paySheet.php" method="post">
+           <input class="btn btn-primary" type="submit" name="submit" value="Download File" />
+       </form> 
     </body>
 </html>
