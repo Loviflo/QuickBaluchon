@@ -160,6 +160,40 @@ $xmlstr = <<<XML
                     <valid>Ok !</valid>
                     <invalid>Incorrect value</invalid>
                 </usernameInput>
+                <deliveryRangeInput>
+                    <title>Maximum delivery range</title>
+                    <placeholder>Range (in km) ...</placeholder>
+                    <valid>Ok !</valid>
+                    <invalid>Incorrect value</invalid>
+                </deliveryRangeInput>
+                <ibanInput>
+                    <title>Your IBAN (for future transactions)</title>
+                    <placeholder>IBAN ...</placeholder>
+                    <valid>Ok !</valid>
+                    <invalid>Incorrect value</invalid>
+                </ibanInput>
+                <vehicleTypeInput>
+                    <title>Your vehicle type</title>
+                    <option0> -- Select an option-- </option0>
+                    <option1>Urban car</option1>
+                    <option2>Sedan</option2>
+                    <option3>Passenger car</option3>
+                    <option4>Other</option4>
+                    <valid>Ok !</valid>
+                    <invalid>Incorrect value</invalid>
+                </vehicleTypeInput>
+                <vehicleBrandInput>
+                    <title>Vehicle brand</title>
+                    <placeholder>Brand ...</placeholder>
+                    <valid>Ok !</valid>
+                    <invalid>Incorrect value</invalid>
+                </vehicleBrandInput>
+                <vehicleCapacityInput>
+                    <title>Vehicle's storage capacity (to determine the amount of packages that we can assign to you)</title>
+                    <placeholder>Storage (in m^3) ...</placeholder>
+                    <valid>Ok !</valid>
+                    <invalid>Incorrect value</invalid>
+                </vehicleCapacityInput>
                 <passwordInput>
                     <title>Password</title>
                     <placeholder>Password...</placeholder>

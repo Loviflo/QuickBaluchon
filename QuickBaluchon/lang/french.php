@@ -160,6 +160,40 @@ $xmlstr = <<<XML
                     <valid>Ok !</valid>
                     <invalid>Valeur incorrecte</invalid>
                 </usernameInput>
+                <deliveryRangeInput>
+                    <title>Distance maximum de livraison</title>
+                    <placeholder>Distance (en km) ...</placeholder>
+                    <valid>Ok !</valid>
+                    <invalid>Valeur incorrecte</invalid>
+                </deliveryRangeInput>
+                <ibanInput>
+                    <title>Votre IBAN (pour de futures transactions)</title>
+                    <placeholder>IBAN ...</placeholder>
+                    <valid>Ok !</valid>
+                    <invalid>Valeur incorrecte</invalid>
+                </ibanInput>
+                <vehicleTypeInput>
+                    <title>Votre type de véhicule</title>
+                    <option0> -- Séléctionnez une option -- </option0>
+                    <option1>Citadine</option1>
+                    <option2>Berline</option2>
+                    <option3>Break</option3>
+                    <option4>Autre</option4>
+                    <valid>Ok !</valid>
+                    <invalid>Valeur incorrecte</invalid>
+                </vehicleTypeInput>
+                <vehicleBrandInput>
+                    <title>Marque du véhicule</title>
+                    <placeholder>Marque ...</placeholder>
+                    <valid>Ok !</valid>
+                    <invalid>Valeur incorrecte</invalid>
+                </vehicleBrandInput>
+                <vehicleCapacityInput>
+                    <title>Capacité de stockage du véhicule (afin d'estimer combien de colis peuvent vous être attribués)</title>
+                    <placeholder>Stockage (en m^3) ...</placeholder>
+                    <valid>Ok !</valid>
+                    <invalid>Valeur incorrecte</invalid>
+                </vehicleCapacityInput>
                 <passwordInput>
                     <title>Mot de passe</title>
                     <placeholder>Mot de passe...</placeholder>

@@ -1,4 +1,4 @@
-<header class="p-3 text-white" style="background: rgb(103,66,50);color: rgb(255,255,255);">
+<header class="p-1 text-white" style="background: rgb(103,66,50);color: rgb(255,255,255);">
     <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
     <div class="text-start">
         <a href="/QuickBaluchon/QuickBaluchon/index.php" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
