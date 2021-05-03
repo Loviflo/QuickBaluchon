@@ -24,7 +24,7 @@ require_once(dirname(__DIR__) . "/bdd/database.php");
                 <div class="card">
                     <div class="row ">
                         <div class="col-md-4">
-                            <img src="<?php echo $result['cv']; ?>" alt="Profil" class="w-100">
+                            <img src="../img/utilisateur-de-profil.png" alt="Profil" class="w-100">
                         </div>
                         <div class="col-md-8 px-3">
                             <div class="card-block px-3">

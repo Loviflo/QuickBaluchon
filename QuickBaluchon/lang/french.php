@@ -221,6 +221,17 @@ $xmlstr = <<<XML
         <clientSpace>
             <pageTitle>Espace Client</pageTitle>
             <title>Espace Client</title>
+            <downloadButton>Télécharger votre outil de création de colis</downloadButton>
+            <deliverymanList>Liste des livreurs</deliverymanList>
+            <trackingId>ID de suivi</trackingId>
+            <destination>Destination</destination>
+            <weight>Poids</weight>
+            <deliveryType>Type de livraison</deliveryType>
+            <status>État</status>
+            <assignPackage>Assigner le colis</assignPackage>
+            <successAssignement>Colis assigné avec succès</successAssignement>
+            <errorAssignement>Erreur lors de l'assignement du colis</errorAssignement>
+            <billButton>Générer ma facture</billButton>
         </clientSpace>
         <deliverymanSpace>
             <pageTitle>Espace Livreur</pageTitle>

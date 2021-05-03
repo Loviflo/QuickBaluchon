@@ -221,6 +221,17 @@ $xmlstr = <<<XML
         <clientSpace>
             <pageTitle>Customer space</pageTitle>
             <title>Customer space</title>
+            <downloadButton>Download your package creation tool</downloadButton>
+            <deliverymanList>Deliveryman list</deliverymanList>
+            <trackingId>Tracking ID</trackingId>
+            <destination>Destination</destination>
+            <weight>Weight</weight>
+            <deliveryType>Delivery type</deliveryType>
+            <status>Status</status>
+            <assignPackage>Assign package</assignPackage>
+            <successAssignement>Package successfully assigned</successAssignement>
+            <errorAssignement>Error when trying to assign the package</errorAssignement>
+            <billButton>Generate my billS</billButton>
         </clientSpace>
         <deliverymanSpace>
             <pageTitle>Deliveryman space</pageTitle>
