@@ -231,7 +231,15 @@ $xmlstr = <<<XML
             <assignPackage>Assign package</assignPackage>
             <successAssignement>Package successfully assigned</successAssignement>
             <errorAssignement>Error when trying to assign the package</errorAssignement>
-            <billButton>Generate my billS</billButton>
+            <billButton>Generate my bill</billButton>
+            <bill>
+                <title>Bill</title>
+                <yourTotal>Your total</yourTotal>
+                <detail>List of your packages</detail>
+                <packageWeight>Package weight</packageWeight>
+                <packageDeliveryType>Delivery type</packageDeliveryType>
+                <packagePrice>Price</packagePrice>
+            </bill>
         </clientSpace>
         <deliverymanSpace>
             <pageTitle>Deliveryman space</pageTitle>

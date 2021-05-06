@@ -232,6 +232,14 @@ $xmlstr = <<<XML
             <successAssignement>Colis assigné avec succès</successAssignement>
             <errorAssignement>Erreur lors de l'assignement du colis</errorAssignement>
             <billButton>Générer ma facture</billButton>
+            <bill>
+                <title>Facture</title>
+                <yourTotal>Votre total</yourTotal>
+                <detail>Liste de vos colis</detail>
+                <packageWeight>Poids du colis</packageWeight>
+                <packageDeliveryType>Type de livraison</packageDeliveryType>
+                <packagePrice>Prix</packagePrice>
+            </bill>
         </clientSpace>
         <deliverymanSpace>
             <pageTitle>Espace Livreur</pageTitle>
