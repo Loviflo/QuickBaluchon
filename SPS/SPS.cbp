@@ -29,8 +29,8 @@
 			</Target>
 		</Build>
 		<Compiler>
-			<Add option="-mms-bitfields" />
 			<Add option="-Wall" />
+			<Add option="-mms-bitfields" />
 			<Add directory="H:/GTK/include" />
 			<Add directory="H:/GTK/include/gtk-3.0" />
 			<Add directory="H:/GTK/include/cairo" />
@@ -46,7 +46,10 @@
 			<Add library="gtk-win32-3.0" />
 			<Add library="gobject-2.0" />
 			<Add library="glib-2.0" />
+			<Add library="../../../../Programmes Files/CodeBlocks/curl-7.74.0_2-win32-mingw/lib/libcurl.a" />
+			<Add library="../../../../Programmes Files/CodeBlocks/curl-7.74.0_2-win32-mingw/lib/libcurl.dll.a" />
 			<Add directory="H:/GTK/lib" />
+			<Add directory="../../../../Programmes Files/CodeBlocks/curl-7.74.0_2-win32-mingw/lib" />
 		</Linker>
 		<Unit filename="cours.c">
 			<Option compilerVar="CC" />
@@ -54,6 +57,10 @@
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="qrcodegen.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="qrcodegen.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

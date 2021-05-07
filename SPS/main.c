@@ -2,18 +2,27 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stddef.h>
 #include <curl/curl.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <errno.h>
-//#include <time.h>
+#include <time.h>
+#include <stdbool.h>
 #include <unistd.h>
+#include <stdint.h>
+#include "qrcodegen.h"
 
 #define LOCAL_FILE "file.csv"
 #define UPLOAD_FILE_AS "while-uploading.tmp"
 #define REMOTE_URL "ftp://Test:1234@localhost/" UPLOAD_FILE_AS
 //#define RENAME_FILE_TO  "fileTest.csv"
+
+//unsigned long long id = 0;
+
+static void doBasicDemo(unsigned long long);
+static void printQr(const uint8_t qrcode[]);
 
 struct _info
 {
@@ -24,26 +33,20 @@ struct _info
     GtkWidget *submit_button;
     GtkWidget *back_button;
     /// ***
-    GtkWidget *firstName_entry;
-    GtkWidget *firstName_label;
-    /// ***
-    GtkWidget *lastName_entry;
-    GtkWidget *lastName_label;
-    /// ***
     GtkWidget *typeBox_entry;
     GtkWidget *typeBox_label;
-    /// ***
-    GtkWidget *QRCode_entry;
-    GtkWidget *QRCode_label;
     /// ***
     GtkWidget *address_entry;
     GtkWidget *address_label;
     /// ***
+    GtkWidget *city_entry;
+    GtkWidget *city_label;
+    /// ***
     GtkWidget *zipCode_entry;
     GtkWidget *zipCode_label;
     /// ***
-    GtkWidget *phoneNumber_entry;
-    GtkWidget *phoneNumber_label;
+    GtkWidget *weight_entry;
+    GtkWidget *weight_label;
 } info;
 
 static guint flag = 0;
@@ -55,9 +58,8 @@ void page1(int argc, char *argv[]);
 
 int main(int argc, char *argv[])
 {
-    page1(argc,*argv);
-
     srand(time(NULL));
+
     gtk_init(&argc, &argv);
     info.window = createWindow(800, 600);
     info.grid = gtk_grid_new();
@@ -69,52 +71,60 @@ int main(int argc, char *argv[])
     info.label = gtk_label_new("Entrez les informations :");
     gtk_widget_set_margin_top(info.label, 25);
     /// ***
-    info.firstName_label = gtk_label_new("Prenom : ");
+    info.address_label = gtk_label_new("Adresse : ");
     /// ***
-    info.lastName_label = gtk_label_new("Nom : ");
+    info.city_label = gtk_label_new("Ville : ");
     /// ***
-    info.typeBox_label = gtk_label_new("Type de colis : ");
+    info.zipCode_label = gtk_label_new("Code postal : ");
     /// ***
-    info.QRCode_label = gtk_label_new("QRCode (Oui ou Non) : ");
+    info.weight_label = gtk_label_new("Poids du colis : ");
     /// ***
-    info.firstName_entry = gtk_entry_new();
-    info.lastName_entry = gtk_entry_new();
+    info.typeBox_label = gtk_label_new("Type de livraison (EXPRESS ou STANDARD) : ");
+    /// ***
+    info.address_entry = gtk_entry_new();
+    info.city_entry = gtk_entry_new();
+    info.zipCode_entry = gtk_entry_new();
+    info.weight_entry = gtk_entry_new();
     info.typeBox_entry = gtk_entry_new();
-    info.QRCode_entry = gtk_entry_new();
     /// ***
-    g_signal_connect_swapped(info.firstName_entry, "activate", G_CALLBACK(activate_callback), info.firstName_entry);
-    g_signal_connect_swapped(info.lastName_entry, "activate", G_CALLBACK(activate_callback), info.lastName_entry);
+    g_signal_connect_swapped(info.address_entry, "activate", G_CALLBACK(activate_callback), info.address_entry);
+    g_signal_connect_swapped(info.city_entry, "activate", G_CALLBACK(activate_callback), info.city_entry);
+    g_signal_connect_swapped(info.zipCode_entry, "activate", G_CALLBACK(activate_callback), info.zipCode_entry);
+    g_signal_connect_swapped(info.weight_entry, "activate", G_CALLBACK(activate_callback), info.weight_entry);
     g_signal_connect_swapped(info.typeBox_entry, "activate", G_CALLBACK(activate_callback), info.typeBox_entry);
-    g_signal_connect_swapped(info.QRCode_entry, "activate", G_CALLBACK(activate_callback), info.QRCode_entry);
     /// ***
     info.submit_button = gtk_button_new_with_mnemonic("_Submit");
     gtk_widget_set_name(info.submit_button, "Valider");
     /// ***
-    g_signal_connect_swapped(info.submit_button, "clicked", G_CALLBACK(submit_clicked), info.firstName_entry);
-    g_signal_connect_swapped(info.submit_button, "clicked", G_CALLBACK(submit_clicked), info.lastName_entry);
+    g_signal_connect_swapped(info.submit_button, "clicked", G_CALLBACK(submit_clicked), info.address_entry);
+    g_signal_connect_swapped(info.submit_button, "clicked", G_CALLBACK(submit_clicked), info.city_entry);
+    g_signal_connect_swapped(info.submit_button, "clicked", G_CALLBACK(submit_clicked), info.zipCode_entry);
+    g_signal_connect_swapped(info.submit_button, "clicked", G_CALLBACK(submit_clicked), info.weight_entry);
     g_signal_connect_swapped(info.submit_button, "clicked", G_CALLBACK(submit_clicked), info.typeBox_entry);
-    g_signal_connect_swapped(info.submit_button, "clicked", G_CALLBACK(submit_clicked), info.QRCode_entry);
     /// ***
     info.back_button = gtk_button_new_with_mnemonic("_Submit");
     gtk_widget_set_name(info.back_button, "Valider");
     g_signal_connect(info.back_button,"clicked",G_CALLBACK(page1), NULL);
     /// ***
     gtk_grid_attach(GTK_GRID(info.grid), info.label, 0, 0, 2, 1);
-    gtk_grid_attach(GTK_GRID(info.grid), info.firstName_label, 0, 1, 1, 1);
-    gtk_grid_attach(GTK_GRID(info.grid), info.lastName_label, 0, 2, 1, 1);
-    gtk_grid_attach(GTK_GRID(info.grid), info.typeBox_label, 0, 3, 1, 1);
-    gtk_grid_attach(GTK_GRID(info.grid), info.QRCode_label, 0, 4, 1, 1);
+    gtk_grid_attach(GTK_GRID(info.grid), info.address_label, 0, 3, 1, 1);
+    gtk_grid_attach(GTK_GRID(info.grid), info.city_label, 0, 4, 1, 1);
+    gtk_grid_attach(GTK_GRID(info.grid), info.zipCode_label, 0, 5, 1, 1);
+    gtk_grid_attach(GTK_GRID(info.grid), info.weight_label, 0, 6, 1, 1);
+    gtk_grid_attach(GTK_GRID(info.grid), info.typeBox_label, 0, 7, 1, 1);
     /// ***
-    gtk_grid_attach(GTK_GRID(info.grid), info.firstName_entry, 1, 1, 1, 1);
-    gtk_grid_attach(GTK_GRID(info.grid), info.lastName_entry, 1, 2, 1, 1);
-    gtk_grid_attach(GTK_GRID(info.grid), info.typeBox_entry, 1, 3, 1, 1);
-    gtk_grid_attach(GTK_GRID(info.grid), info.QRCode_entry, 1, 4, 1, 1);
-    gtk_grid_attach(GTK_GRID(info.grid), info.submit_button, 1, 6, 1, 1);
-    gtk_grid_attach(GTK_GRID(info.grid), info.back_button, 1, 8, 1, 1);
+    gtk_grid_attach(GTK_GRID(info.grid), info.address_entry, 1, 3, 1, 1);
+    gtk_grid_attach(GTK_GRID(info.grid), info.city_entry, 1, 4, 1, 1);
+    gtk_grid_attach(GTK_GRID(info.grid), info.zipCode_entry, 1, 5, 1, 1);
+    gtk_grid_attach(GTK_GRID(info.grid), info.weight_entry, 1, 6, 1, 1);
+    gtk_grid_attach(GTK_GRID(info.grid), info.typeBox_entry, 1, 7, 1, 1);
+    gtk_grid_attach(GTK_GRID(info.grid), info.submit_button, 1, 10, 1, 1);
+    //gtk_grid_attach(GTK_GRID(info.grid), info.back_button, 1, 12, 1, 1);
     /// ***
-    gtk_widget_set_sensitive(info.lastName_entry, FALSE);
+    gtk_widget_set_sensitive(info.city_entry, FALSE);
+    gtk_widget_set_sensitive(info.zipCode_entry, FALSE);
+    gtk_widget_set_sensitive(info.weight_entry, FALSE);
     gtk_widget_set_sensitive(info.typeBox_entry, FALSE);
-    gtk_widget_set_sensitive(info.QRCode_entry, FALSE);
     gtk_widget_set_sensitive(info.submit_button, FALSE);
     /// ***
     gtk_container_add(GTK_CONTAINER(info.window), info.grid);
@@ -131,28 +141,33 @@ void activate_callback(GtkWidget *widget)
         switch (flag)
         {
         case 0:
-            gtk_widget_set_sensitive(info.lastName_entry, TRUE);
-            gtk_widget_set_sensitive(info.firstName_entry, FALSE);
+            gtk_widget_set_sensitive(info.city_entry, TRUE);
+            gtk_widget_set_sensitive(info.address_entry, FALSE);
             flag++;
             break;
         case 1:
-            gtk_widget_set_sensitive(info.typeBox_entry, TRUE);
-            gtk_widget_set_sensitive(info.lastName_entry, FALSE);
+            gtk_widget_set_sensitive(info.zipCode_entry, TRUE);
+            gtk_widget_set_sensitive(info.city_entry, FALSE);
             flag++;
             break;
         case 2:
-            gtk_widget_set_sensitive(info.QRCode_entry, TRUE);
-            gtk_widget_set_sensitive(info.typeBox_entry, FALSE);
+            gtk_widget_set_sensitive(info.weight_entry, TRUE);
+            gtk_widget_set_sensitive(info.zipCode_entry, FALSE);
             flag++;
             break;
         case 3:
+            gtk_widget_set_sensitive(info.typeBox_entry, TRUE);
+            gtk_widget_set_sensitive(info.weight_entry, FALSE);
+            flag++;
+            break;
+        case 4:
             gtk_widget_set_sensitive(info.submit_button, TRUE);
+            gtk_widget_set_sensitive(info.typeBox_entry, FALSE);
             gtk_window_set_focus(GTK_WINDOW(info.window), info.submit_button);
-            gtk_widget_set_sensitive(info.QRCode_entry, FALSE);
             flag++;
             break;
         default:
-            flag = 4;
+            flag = 5;
         }
     }
 }
@@ -160,19 +175,19 @@ void activate_callback(GtkWidget *widget)
 void submit_clicked(GtkWidget *widget)
 {
     static guchar status = 0;
-    char *table[5][25];
+    char *table[9][25];
 
-    if (status < 4)
+    if (status < 5)
     {
         g_print("%s\n", gtk_entry_get_text(GTK_ENTRY(widget)));
         strcpy(table[status], gtk_entry_get_text(GTK_ENTRY(widget)));
         status++;
     }
 
-    if (status == 4)
+    if (status == 5)
     {
         //unsigned long id = time( NULL );
-        unsigned long long id = rand() % 100000001;
+        unsigned long long id = rand() % 10000000001;
         char idText[50];
         sprintf(idText, "%llu", id);
         char renameFileTo[50] = "RNTO fileTest";
@@ -181,9 +196,12 @@ void submit_clicked(GtkWidget *widget)
 
         FILE *file = NULL;
         file = fopen("file.csv", "w+");
-        // On l'écrit dans le fichier
-        fprintf(file, "%s ;%s ;%s ;%s", table[0], table[1], table[2], table[3]);
-        fclose(file); // On ferme le fichier qui a été ouvert
+        // On l'Ã©crit dans le fichier
+        fprintf(file, "%s ;%s ;%s ;%s ;%s ;%llu", table[0], table[1], table[2], table[3], table[4], id);
+        fclose(file); // On ferme le fichier qui a Ã©tÃ© ouvert
+
+        doBasicDemo(id);
+
         CURL *curl;
         CURLcode res;
         FILE *file_src;
@@ -266,7 +284,7 @@ GtkWidget *createWindow(const gint width, const gint height)
     g_signal_connect(window, "destroy", gtk_main_quit, window);
     gtk_widget_set_events(window, GDK_KEY_PRESS_MASK);
     /// ***
-    gtk_window_set_default_size(GTK_WINDOW(window), width, height);
+    //gtk_window_set_default_size(GTK_WINDOW(window), width, height);
     gtk_container_set_border_width(GTK_CONTAINER(window), 50);
     return window;
 }
@@ -275,6 +293,41 @@ void page1(int argc, char *argv[]){
     gtk_init(&argc, &argv);
     info.window2 = createWindow(800, 600);
     gtk_widget_show_all(info.window2);
-    gtk_window_close(info.window2);
+   // gtk_window_close(info.window2);
 }
 
+static void doBasicDemo(unsigned long long id) {
+    char textId[10];
+	char text[255] = "http://localhost:81/QuickBaluchon/QuickBaluchon/packageDelivered.php?package_id=";
+	sprintf(textId,"%llu%",id);
+	strcat(text,textId);
+    // User-supplied text
+	enum qrcodegen_Ecc errCorLvl = qrcodegen_Ecc_LOW;  // Error correction level
+
+	// Make and print the QR Code symbol
+	uint8_t qrcode[qrcodegen_BUFFER_LEN_MAX];
+	uint8_t tempBuffer[qrcodegen_BUFFER_LEN_MAX];
+	bool ok = qrcodegen_encodeText(text, tempBuffer, qrcode, errCorLvl,
+		qrcodegen_VERSION_MIN, qrcodegen_VERSION_MAX, qrcodegen_Mask_AUTO, true);
+	if (ok)
+		printQr(qrcode);
+}
+
+/*---- Utilities ----*/
+
+// Prints the given QR Code to the console.
+static void printQr(const uint8_t qrcode[]) {
+	int size = qrcodegen_getSize(qrcode);
+	int border = 4;
+	FILE *qrcodeFile;
+	qrcodeFile = fopen("qrcode.txt","wb");
+	for (int y = -border; y < size + border; y++) {
+		for (int x = -border; x < size + border; x++) {
+			fputs((qrcodegen_getModule(qrcode, x, y) ? "â–ˆâ–ˆ" : "  "), qrcodeFile);
+		}
+		fputs("\n", qrcodeFile);
+	}
+	fputs("\n", qrcodeFile);
+	fclose(qrcodeFile);
+	printf("\nLe QRCode est dans le dossier du programme\n");
+}
