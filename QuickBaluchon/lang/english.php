@@ -258,10 +258,10 @@ $xmlstr = <<<XML
             <deliveryType>Delivery type</deliveryType>
             <status>Status</status>
             <additionalInfo>Additional info</additionalInfo>
-            <notFoundButton>Package not found</notFoundButton>
+            <notFoundButton>Package not delivered</notFoundButton>
             <downloadButton>QrCode scanner app</downloadButton>
-            <successNotFound>Package successfully labelled "not found"</successNotFound>
-            <errorNotFound>Error while trying to label the package as "not found"</errorNotFound>
+            <successNotFound>Package successfully labelled "not delivered"</successNotFound>
+            <errorNotFound>Error while trying to label the package as "not delivered"</errorNotFound>
         </deliverymanSpace>
         <contact>
             <pageTitle>Contact</pageTitle>

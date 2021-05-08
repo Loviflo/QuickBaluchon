@@ -258,10 +258,10 @@ $xmlstr = <<<XML
             <deliveryType>Type de livraison</deliveryType>
             <status>État</status>
             <additionalInfo>Infos complémentaires</additionalInfo>
-            <notFoundButton>Colis non trouvé</notFoundButton>
+            <notFoundButton>Colis non livré</notFoundButton>
             <downloadButton>Application de scanner de Qrcode</downloadButton>
-            <successNotFound>Colis correctement désigné comme "non trouvé"</successNotFound>
-            <errorNotFound>Erreur lors de la désignation du colis comme "non trouvé"</errorNotFound>
+            <successNotFound>Colis correctement désigné comme "non livré"</successNotFound>
+            <errorNotFound>Erreur lors de la désignation du colis comme "non livré"</errorNotFound>
         </deliverymanSpace>
         <contact>
             <pageTitle>Contact</pageTitle>
