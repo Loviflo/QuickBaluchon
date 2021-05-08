@@ -66,8 +66,8 @@ $xmlstr = <<<XML
         <index>
             <pageTitle>Page d'accueil</pageTitle>
             <title>Accueil</title>
-            <subtitle>Ceci est un sous-titre</subtitle>
-            <text></text>
+            <subtitle>Histoire</subtitle>
+            <text>Établie dans le nord de Paris, SPS est une société française de livraison de colis, permettant de simplifier et d'aider l'acheminement des achats des sites d’e-commerce. Elle dispose d’un ensemble de vingt dépôts répartis sur la France entière. Suite à la crise sanitaire du COVID19, son activité n’a cessé d’augmenter, elle compte donc en ouvrir dix de plus cette année. La société a construit au fil des années une image de marque basée sur la qualité et la fiabilité de ses services. Pour ce faire, SPS travaille avec des livreurs indépendants (sous statut d'autoentrepreneur par exemple) rigoureusement sélectionnés et auprès desquels elle veille à la qualité des prestations grâce à des outils informatiques.</text>
         </index>
         <logInClient>
             <pageTitle>Page de connexion - Client</pageTitle>
