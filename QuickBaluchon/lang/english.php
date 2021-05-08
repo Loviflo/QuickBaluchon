@@ -245,6 +245,16 @@ $xmlstr = <<<XML
             <pageTitle>Deliveryman space</pageTitle>
             <title>Deliveryman space</title>
         </deliverymanSpace>
+        <packageDelivered>
+            <pageTitle>Order confirmation</pageTitle>
+            <title>Order confirmation</title>
+            <buttons>
+                <buttonOk>Confirm the order</buttonOk>
+                <buttonCancel>Cancel</buttonCancel>
+            </buttons>
+            <successUpdate>The package has been noted as delivered</successUpdate>
+            <errorUpdate>The package could not be noted as delivered</errorUpdate>
+        </packageDelivered>
         <contact>
             <pageTitle>Contact</pageTitle>
             <title>Contact</title>

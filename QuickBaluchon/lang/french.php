@@ -245,6 +245,16 @@ $xmlstr = <<<XML
             <pageTitle>Espace Livreur</pageTitle>
             <title>Espace Livreur</title>
         </deliverymanSpace>
+        <packageDelivered>
+            <pageTitle>Confirmation de la livraison</pageTitle>
+            <title>Confirmation de la livraison</title>
+            <buttons>
+                <buttonOk>Confirmer la livraison</buttonOk>
+                <buttonCancel>Annuler</buttonCancel>
+            </buttons>
+            <successUpdate>Le colis a bien été noté commme livré</successUpdate>
+            <errorUpdate>Le colis n'a pas pu être noté comme livré</errorUpdate>
+        </packageDelivered>
         <contact>
             <pageTitle>Contact</pageTitle>
             <title>Contact</title>
