@@ -39,16 +39,18 @@ while(1==1){
         printf("%s\n",table[4]);
         printf("%s\n",table[5]);
 
-        MYSQL mysql;
-        mysql_init(&mysql);
-        mysql_options(&mysql,MYSQL_READ_DEFAULT_GROUP,"option");
-        if(mysql_real_connect(&mysql,"localhost","root","root","quickbaluchon",3307,NULL,0)){
+        MYSQL *mysql = mysql_init(NULL);
+        mysql_options(mysql,MYSQL_READ_DEFAULT_GROUP,"option");
+
+        if(mysql_real_connect(mysql,"localhost","root","root","quickbaluchon",3307,NULL,0)){
             char req[1500] = "";
             sprintf(req, "INSERT INTO package (destination,city,zipCode,weight,delivery_type,tracking_id) VALUES('%s','%s','%s','%s','%s','%s')",table[0],table[1],table[2],table[3],table[4],table[5]);
             printf(req);
-            mysql_query(&mysql, req);
-            printf('Test');
-            mysql_close(&mysql);
+            mysql_query(mysql, req);
+            printf("OK");
+            mysql_close(mysql);
+        } else {
+            printf("Erreur");
         }
         strcpy(fileNameBAK,"BAK\\");
         strcat(fileNameBAK,dir->d_name);

@@ -12,7 +12,7 @@
   <div class="pt-3 row">
   <p class="justify-content-center align-items-center">
     <span class="me-3"><?php echo $site->footer->contact->title; ?></span>
-    <a href="#"><button type="button" class="btn btn-outline-light btn-rounded"><?php echo $site->footer->contact->buttonName; ?></button></a>
+    <a href="/QuickBaluchon/QuickBaluchon/contact.php"><button type="button" class="btn btn-outline-light btn-rounded"><?php echo $site->footer->contact->buttonName; ?></button></a>
   </p>
   </div>
   <div class="row">
@@ -26,7 +26,7 @@
     <div class="col-lg-4">
       <p class="justify-content-center align-items-center">
         <span class="me-3"><?php echo $site->footer->contact->title; ?></span>
-        <a href="#"><button type="button" class="btn btn-outline-light btn-rounded"><?php echo $site->footer->contact->buttonName; ?></button></a>
+        <a href="/QuickBaluchon/QuickBaluchon/contact.php"><button type="button" class="btn btn-outline-light btn-rounded"><?php echo $site->footer->contact->buttonName; ?></button></a>
       </p>
     </div>
     <div class="col-lg-4 mb-2 mb-lg-0">

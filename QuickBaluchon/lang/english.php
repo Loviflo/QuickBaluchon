@@ -66,8 +66,8 @@ $xmlstr = <<<XML
         <index>
             <pageTitle>Home page</pageTitle>
             <title>Home</title>
-            <subtitle>This is a subtitle</subtitle>
-            <text></text>
+            <subtitle>History</subtitle>
+            <text>Established in the north of Paris, SPS is a French parcel delivery company, allowing to simplify and help the routing of the purchases of the sites of e-commerce. It has twenty depots throughout France. Following the COVID19 health crisis, its activity has continued to increase, so it plans to open ten more this year. Over the years, the company has built a brand image based on the quality and reliability of its services. To perform this, SPS works with independent delivery agents (under the status of self-employed contractor, for example) who are rigorously selected and with whom it monitors the quality of its services using computerized tools.</text>
         </index>
         <logInClient>
             <pageTitle>Login page - Customer</pageTitle>
@@ -263,6 +263,36 @@ $xmlstr = <<<XML
             <successNotFound>Package successfully labelled "not found"</successNotFound>
             <errorNotFound>Error while trying to label the package as "not found"</errorNotFound>
         </deliverymanSpace>
+        <contact>
+            <pageTitle>Contact</pageTitle>
+            <title>Contact</title>
+            <cards>
+                <cardVR>
+                    <title>Vivian RUHLMANN</title>
+                </cardVR>
+                <cardAD>
+                    <title>Antoine DESBRUERES</title>
+                </cardAD>
+                <cardKC>
+                    <title>Kilian CASSAIGNE</title>
+                </cardKC>
+            </cards>
+            <contactUs>
+                <title>Where you can find us</title>
+                <phone>
+                    <title>Call us</title>
+                    <number>XX XX XX XX XX</number>
+                </phone>
+                <mail>
+                    <title>Email address</title>
+                    <mail>spscontact@sps.com</mail>
+                </mail>
+                <linkedin>
+                    <title>LinkedIn</title>
+                    <link>Company page</link>
+                </linkedin>
+            </contactUs>
+        </contact>
     </pagesClientSide>
     <pagesAdminSide>
         <staffAccount>
