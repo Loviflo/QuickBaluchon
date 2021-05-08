@@ -232,6 +232,8 @@ $xmlstr = <<<XML
             <successAssignement>Package successfully assigned</successAssignement>
             <errorAssignement>Error when trying to assign the package</errorAssignement>
             <billButton>Generate my bill</billButton>
+            <historyButton>Bill history</historyButton>
+            <action>Action</action>
             <bill>
                 <title>Bill</title>
                 <yourTotal>Your total</yourTotal>
@@ -239,11 +241,27 @@ $xmlstr = <<<XML
                 <packageWeight>Package weight</packageWeight>
                 <packageDeliveryType>Delivery type</packageDeliveryType>
                 <packagePrice>Price</packagePrice>
+                <billId>ID bill</billId>
+                <billAmount>Bill amount</billAmount>
+                <billDate>Bill date</billDate>
+                <action>Action</action>
+                <downloadBill>Download bill</downloadBill>
+                <nothingToBill>Nothing to bill!</nothingToBill>
             </bill>
         </clientSpace>
         <deliverymanSpace>
             <pageTitle>Deliveryman space</pageTitle>
             <title>Deliveryman space</title>
+            <trackingId>Tracking ID</trackingId>
+            <destination>Destination</destination>
+            <weight>Weight</weight>
+            <deliveryType>Delivery type</deliveryType>
+            <status>Status</status>
+            <additionalInfo>Additional info</additionalInfo>
+            <notFoundButton>Package not delivered</notFoundButton>
+            <downloadButton>QrCode scanner app</downloadButton>
+            <successNotFound>Package successfully labelled "not delivered"</successNotFound>
+            <errorNotFound>Error while trying to label the package as "not delivered"</errorNotFound>
         </deliverymanSpace>
         <packageDelivered>
             <pageTitle>Order confirmation</pageTitle>

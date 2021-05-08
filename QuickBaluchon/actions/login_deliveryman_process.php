@@ -18,13 +18,14 @@ if (count($results) == 0) {
 	header('location: ../login_deliveryman.php?ifail=Votre compte est en cours de validation');
 } else {
 	$user = $_POST['username'];
-	$q = $db->prepare("SELECT username FROM deliveryman WHERE username like :login ");
+	$q = $db->prepare("SELECT id_deliveryman, username FROM deliveryman WHERE username like :login ");
 	if($q->execute(array(':login' => $user)) && $row = $q->fetch())
 	{
         $user = $row['username'];
+        $id = $row['id_deliveryman'];
 	
 		session_start();
-		$_SESSION['user'] = array('username' => $user,'rank' => 'deliveryman');
+		$_SESSION['user'] = array('username' => $user,'rank' => 'deliveryman', 'id' => $id);
 
 		header('location: ../index.php');
 		exit();	

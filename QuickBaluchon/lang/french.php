@@ -232,6 +232,8 @@ $xmlstr = <<<XML
             <successAssignement>Colis assigné avec succès</successAssignement>
             <errorAssignement>Erreur lors de l'assignement du colis</errorAssignement>
             <billButton>Générer ma facture</billButton>
+            <historyButton>Historique des factures</historyButton>
+            <action>Action</action>
             <bill>
                 <title>Facture</title>
                 <yourTotal>Votre total</yourTotal>
@@ -239,11 +241,27 @@ $xmlstr = <<<XML
                 <packageWeight>Poids du colis</packageWeight>
                 <packageDeliveryType>Type de livraison</packageDeliveryType>
                 <packagePrice>Prix</packagePrice>
+                <billId>ID facture</billId>
+                <billAmount>Montant facture</billAmount>
+                <billDate>Date de la facture</billDate>
+                <action>Action</action>
+                <downloadBill>Télécharger la facture</downloadBill>
+                <nothingToBill>Aucun colis à facturer !</nothingToBill>
             </bill>
         </clientSpace>
         <deliverymanSpace>
             <pageTitle>Espace Livreur</pageTitle>
             <title>Espace Livreur</title>
+            <trackingId>ID de suivi</trackingId>
+            <destination>Destination</destination>
+            <weight>Poids</weight>
+            <deliveryType>Type de livraison</deliveryType>
+            <status>État</status>
+            <additionalInfo>Infos complémentaires</additionalInfo>
+            <notFoundButton>Colis non livré</notFoundButton>
+            <downloadButton>Application de scanner de Qrcode</downloadButton>
+            <successNotFound>Colis correctement désigné comme "non livré"</successNotFound>
+            <errorNotFound>Erreur lors de la désignation du colis comme "non livré"</errorNotFound>
         </deliverymanSpace>
         <packageDelivered>
             <pageTitle>Confirmation de la livraison</pageTitle>
