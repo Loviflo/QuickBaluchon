@@ -245,6 +245,36 @@ $xmlstr = <<<XML
             <pageTitle>Espace Livreur</pageTitle>
             <title>Espace Livreur</title>
         </deliverymanSpace>
+        <contact>
+            <pageTitle>Contact</pageTitle>
+            <title>Contact</title>
+            <cards>
+                <cardVR>
+                    <title>Vivian RUHLMANN</title>
+                </cardVR>
+                <cardAD>
+                    <title>Antoine DESBRUERES</title>
+                </cardAD>
+                <cardKC>
+                <title>Kilian CASSAIGNE</title>
+                </cardKC>
+            </cards>
+            <contactUs>
+                <title>Où pouvez-vous nous trouver</title>
+                <phone>
+                    <title>Appelez-nous</title>
+                    <number>XX XX XX XX XX</number>
+                </phone>
+                <mail>
+                    <title>Adresse mail</title>
+                    <mail>spscontact@sps.com</mail>
+                </mail>
+                <linkedin>
+                    <title>LinkedIn</title>
+                    <link>Page de l'entreprise</link>
+                </linkedin>
+            </contactUs>
+        </contact>
     </pagesClientSide>
     <pagesAdminSide>
         <staffAccount>
