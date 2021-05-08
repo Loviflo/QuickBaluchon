@@ -19,10 +19,13 @@ if (!isset($_SESSION['lang']) || $_SESSION['lang'] == 'fr'){
 }
 
 $bdd = getDatabaseConnection();
-$q = 'SELECT * FROM package WHERE id_client = ? ';
+$q = 'SELECT * FROM package WHERE id_client = ? AND id_bill IS NULL';
 $req = $bdd->prepare($q);
 $req->execute([$_SESSION['user']['id']]);
 $results = $req->fetchAll();
+if (count($results) == 0){
+    header( 'location:../client_space.php?msg=' . $site->pagesClientSide->clientSpace->bill->nothingToBill);
+}
 
 $total = 0;
 $q2 = 'SELECT * FROM tariff_grid';
@@ -70,5 +73,23 @@ $pdf->SetFont('Arial','B',14);
 $pdf->Cell(40,10, $site->pagesClientSide->clientSpace->bill->yourTotal . ' : ' . $total . ' EUR');
 $pdf->Ln();
 
+
+$filename = "Bill" .'-'. $_SESSION['user']['id'] .'-'. time() . ".pdf";
+$absoluteFilename = dirname(__DIR__) . "/Bills/" . $filename;
+
+
+$q3 = 'INSERT INTO bill (bill_date, amount, file_bill, id_client) VALUES ( NOW(), ?, ?, ?) ';
+$req3 = $bdd->prepare($q3);
+$req3->execute([
+    $total,
+    $filename,
+    $_SESSION['user']['id']
+]);
+
+$q4 = 'UPDATE package SET id_bill = LAST_INSERT_ID() WHERE id_bill IS NULL';
+$req4 = $bdd->prepare($q4);
+$req4->execute();
+
+$pdf->Output("F", $absoluteFilename);
 $pdf->Output("D", "Bill.pdf");
 

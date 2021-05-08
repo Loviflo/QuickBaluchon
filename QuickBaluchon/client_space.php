@@ -42,10 +42,11 @@ require_once('bdd/database.php');
                         <th scope="col"><?php echo $site->pagesClientSide->clientSpace->weight; ?></th>
                         <th scope="col"><?php echo $site->pagesClientSide->clientSpace->deliveryType; ?></th>
                         <th scope="col"><?php echo $site->pagesClientSide->clientSpace->status; ?></th>
+                        <th scope="col"><?php echo $site->pagesClientSide->clientSpace->action; ?></th>
                     </tr>
                     </thead>
-                    <?php foreach ($results2 as $key => $package) { ?>
                     <tbody>
+                    <?php foreach ($results2 as $key => $package) { ?>
                     <tr>
                         <td><?= $package['tracking_id']; ?></td>
                         <td><?= $package['destination']; ?></td>
@@ -54,7 +55,7 @@ require_once('bdd/database.php');
                         <td><?= $package['delivery_status']; ?></td>
                         <td>
                             <?php if($package['delivery_status'] == "TO_DELIVER"){ ?>
-                            <a class="btn btn-primary" onclick="location.href='actions/assign_package.php?tracking_id=<?php echo $package['tracking_id'] ?>&deliveryman_id='+document.getElementById('deliveryman').options[document.getElementById('deliveryman').selectedIndex].value;return false;"><?php echo $site->pagesClientSide->clientSpace->assignPackage; ?></a>
+                            <a class="btn btn-primary" onclick="location.href='actions/assign_package.php?id_package=<?php echo $package['id_package'] ?>&deliveryman_id='+document.getElementById('deliveryman').options[document.getElementById('deliveryman').selectedIndex].value;return false;"><?php echo $site->pagesClientSide->clientSpace->assignPackage; ?></a>
                             <?php } ?>
                         </td>
                     </tr>
@@ -67,6 +68,7 @@ require_once('bdd/database.php');
             </div>
             <div class="text-center">
                 <a class="btn btn-primary" href="actions/generateBill.php"><?php echo $site->pagesClientSide->clientSpace->billButton; ?></a>
+                <a class="btn btn-primary" href="actions/billHistory.php"><?php echo $site->pagesClientSide->clientSpace->historyButton; ?></a>
             </div>
         </div>
         <?php include(dirname(__DIR__) . "/QuickBaluchon/inc/footer.php"); ?>
