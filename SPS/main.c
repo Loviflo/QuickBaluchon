@@ -16,7 +16,7 @@
 
 #define LOCAL_FILE "file.csv"
 #define UPLOAD_FILE_AS "while-uploading.tmp"
-#define REMOTE_URL "ftp://Test:1234@localhost/" UPLOAD_FILE_AS
+#define REMOTE_URL "http://54.36.101.250/SPSSRV/files/" UPLOAD_FILE_AS // ftp://Test:1234@localhost/
 //#define RENAME_FILE_TO  "fileTest.csv"
 
 //unsigned long long id = 0;

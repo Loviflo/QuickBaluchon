@@ -271,6 +271,7 @@ $xmlstr = <<<XML
             <pageTitle>Order confirmation</pageTitle>
             <title>Order confirmation</title>
             <buttons>
+                <title>Are you sure to validate the delivery of the package?</title>
                 <buttonOk>Confirm the order</buttonOk>
                 <buttonCancel>Cancel</buttonCancel>
             </buttons>
