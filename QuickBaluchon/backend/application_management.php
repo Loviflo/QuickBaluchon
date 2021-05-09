@@ -16,9 +16,9 @@ require_once(dirname(__DIR__) . "/bdd/database.php");
         <h4><?php echo $site->pagesAdminSide->applicationManagement->subtitle1; ?></h4>
         <?php
         $bdd = getDatabaseConnection();
-        $q = 'SELECT company_name FROM client WHERE comf_cli = ?';
+        $q = 'SELECT company_name FROM client WHERE comf_cli IS NULL';
         $req = $bdd->prepare($q);
-        $req->execute([0]);
+        $req->execute();
         $results = $req->fetchAll(); ?>
         <ul>
             <table class="table">
