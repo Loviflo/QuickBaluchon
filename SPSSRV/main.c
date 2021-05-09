@@ -27,30 +27,53 @@ while(1==1){
         if(file==NULL){
             printf("\nOuverture fichier impossible");
         }
-        char *table[9][50];
+        char table[9][50];
         char line[255];
         fgets(line,255,file);
-        sscanf(line,"%s ;%s ;%s ;%s ;%s ;%s ",table[0],table[1],table[2],table[3], table[4], table[5]);
+        int i = 0;
+        char * strToken = strtok ( line, ";" );
+        //sscanf(line,"%s;%s;%s;%s;%s;%s",table[0],table[1],table[2],table[3], table[4], table[5]);
+        //printf("\n%s\n",table[0]);
+        //printf("%s\n",table[1]);
+        //printf("%s\n",table[2]);
+        //printf("%s\n",table[3]);
+        //printf("%s\n",table[4]);
+        //printf("%s\n",table[5]);
+        while ( strToken != NULL ) {
+            strcpy(table[i],strToken);
+            printf("%s\n",table[i]);
+            i++;
+            // On demande le token suivant.
+            strToken = strtok ( NULL, ";" );
+        }
+        int longueur = strlen(table[3]);
+        table[3][longueur-1] = '\0';
         fclose(file);
-        printf("\n%s\n",table[0]);
-        printf("%s\n",table[1]);
-        printf("%s\n",table[2]);
-        printf("%s\n",table[3]);
-        printf("%s\n",table[4]);
-        printf("%s\n",table[5]);
 
         MYSQL *mysql = mysql_init(NULL);
         mysql_options(mysql,MYSQL_READ_DEFAULT_GROUP,"option");
+        MYSQL_RES *result = NULL;
+        MYSQL_ROW row;
 
         if(mysql_real_connect(mysql,"localhost","root","root","quickbaluchon",3307,NULL,0)){
             char req[1500] = "";
-            sprintf(req, "INSERT INTO package (destination,city,zipCode,weight,delivery_type,tracking_id) VALUES('%s','%s','%s','%s','%s','%s')",table[0],table[1],table[2],table[3],table[4],table[5]);
+            sprintf(req, "SELECT id_client FROM client WHERE company_name = '%s'",table[1]);
             printf(req);
             mysql_query(mysql, req);
-            printf("OK");
+            result = mysql_use_result(mysql);
+            //num_champs = mysql_num_fields(result);
+            printf("\n");
+            row = mysql_fetch_row(result);
+            strcpy(table[1],row[0]);
+            mysql_free_result(result);
+
+            sprintf(req, "INSERT INTO package (destination,additional_info,weight,delivery_type,tracking_id,id_client) VALUES('%s','%s','%s','%s','%s','%s')",table[0],table[2],table[3],table[4],table[5],table[1]);
+            printf(req);
+            mysql_query(mysql, req);
+            printf("\nOK");
             mysql_close(mysql);
         } else {
-            printf("Erreur");
+            printf("\nErreur");
         }
         strcpy(fileNameBAK,"BAK\\");
         strcat(fileNameBAK,dir->d_name);

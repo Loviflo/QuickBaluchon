@@ -33,20 +33,22 @@ struct _info
     GtkWidget *submit_button;
     GtkWidget *back_button;
     /// ***
-    GtkWidget *typeBox_entry;
     GtkWidget *typeBox_label;
     /// ***
     GtkWidget *address_entry;
     GtkWidget *address_label;
     /// ***
-    GtkWidget *city_entry;
-    GtkWidget *city_label;
+    GtkWidget *companyName_entry;
+    GtkWidget *companyName_label;
     /// ***
-    GtkWidget *zipCode_entry;
-    GtkWidget *zipCode_label;
+    GtkWidget *additionalInfo_entry;
+    GtkWidget *additionalInfo_label;
     /// ***
     GtkWidget *weight_entry;
     GtkWidget *weight_label;
+    /// ***
+    GtkWidget *delivery_radio1;
+    GtkWidget *delivery_radio2;
 } info;
 
 static guint flag = 0;
@@ -73,34 +75,33 @@ int main(int argc, char *argv[])
     /// ***
     info.address_label = gtk_label_new("Adresse : ");
     /// ***
-    info.city_label = gtk_label_new("Ville : ");
+    info.companyName_label = gtk_label_new("Nom de l'entreprise : ");
     /// ***
-    info.zipCode_label = gtk_label_new("Code postal : ");
+    info.additionalInfo_label = gtk_label_new("Infos supplémentaires : ");
     /// ***
     info.weight_label = gtk_label_new("Poids du colis : ");
     /// ***
-    info.typeBox_label = gtk_label_new("Type de livraison (EXPRESS ou STANDARD) : ");
+    info.typeBox_label = gtk_label_new("Type de livraison : ");
     /// ***
     info.address_entry = gtk_entry_new();
-    info.city_entry = gtk_entry_new();
-    info.zipCode_entry = gtk_entry_new();
+    info.companyName_entry = gtk_entry_new();
+    info.additionalInfo_entry = gtk_entry_new();
     info.weight_entry = gtk_entry_new();
-    info.typeBox_entry = gtk_entry_new();
+    info.delivery_radio1 = gtk_radio_button_new_with_label(NULL,"STANDARD");
+    info.delivery_radio2 = gtk_radio_button_new_with_label_from_widget(GTK_RADIO_BUTTON(info.delivery_radio1),"EXPRESS");
     /// ***
     g_signal_connect_swapped(info.address_entry, "activate", G_CALLBACK(activate_callback), info.address_entry);
-    g_signal_connect_swapped(info.city_entry, "activate", G_CALLBACK(activate_callback), info.city_entry);
-    g_signal_connect_swapped(info.zipCode_entry, "activate", G_CALLBACK(activate_callback), info.zipCode_entry);
+    g_signal_connect_swapped(info.companyName_entry, "activate", G_CALLBACK(activate_callback), info.companyName_entry);
+    g_signal_connect_swapped(info.additionalInfo_entry, "activate", G_CALLBACK(activate_callback), info.additionalInfo_entry);
     g_signal_connect_swapped(info.weight_entry, "activate", G_CALLBACK(activate_callback), info.weight_entry);
-    g_signal_connect_swapped(info.typeBox_entry, "activate", G_CALLBACK(activate_callback), info.typeBox_entry);
     /// ***
     info.submit_button = gtk_button_new_with_mnemonic("_Submit");
     gtk_widget_set_name(info.submit_button, "Valider");
     /// ***
     g_signal_connect_swapped(info.submit_button, "clicked", G_CALLBACK(submit_clicked), info.address_entry);
-    g_signal_connect_swapped(info.submit_button, "clicked", G_CALLBACK(submit_clicked), info.city_entry);
-    g_signal_connect_swapped(info.submit_button, "clicked", G_CALLBACK(submit_clicked), info.zipCode_entry);
+    g_signal_connect_swapped(info.submit_button, "clicked", G_CALLBACK(submit_clicked), info.companyName_entry);
+    g_signal_connect_swapped(info.submit_button, "clicked", G_CALLBACK(submit_clicked), info.additionalInfo_entry);
     g_signal_connect_swapped(info.submit_button, "clicked", G_CALLBACK(submit_clicked), info.weight_entry);
-    g_signal_connect_swapped(info.submit_button, "clicked", G_CALLBACK(submit_clicked), info.typeBox_entry);
     /// ***
     info.back_button = gtk_button_new_with_mnemonic("_Submit");
     gtk_widget_set_name(info.back_button, "Valider");
@@ -108,23 +109,25 @@ int main(int argc, char *argv[])
     /// ***
     gtk_grid_attach(GTK_GRID(info.grid), info.label, 0, 0, 2, 1);
     gtk_grid_attach(GTK_GRID(info.grid), info.address_label, 0, 3, 1, 1);
-    gtk_grid_attach(GTK_GRID(info.grid), info.city_label, 0, 4, 1, 1);
-    gtk_grid_attach(GTK_GRID(info.grid), info.zipCode_label, 0, 5, 1, 1);
+    gtk_grid_attach(GTK_GRID(info.grid), info.companyName_label, 0, 4, 1, 1);
+    gtk_grid_attach(GTK_GRID(info.grid), info.additionalInfo_label, 0, 5, 1, 1);
     gtk_grid_attach(GTK_GRID(info.grid), info.weight_label, 0, 6, 1, 1);
     gtk_grid_attach(GTK_GRID(info.grid), info.typeBox_label, 0, 7, 1, 1);
     /// ***
     gtk_grid_attach(GTK_GRID(info.grid), info.address_entry, 1, 3, 1, 1);
-    gtk_grid_attach(GTK_GRID(info.grid), info.city_entry, 1, 4, 1, 1);
-    gtk_grid_attach(GTK_GRID(info.grid), info.zipCode_entry, 1, 5, 1, 1);
+    gtk_grid_attach(GTK_GRID(info.grid), info.companyName_entry, 1, 4, 1, 1);
+    gtk_grid_attach(GTK_GRID(info.grid), info.additionalInfo_entry, 1, 5, 1, 1);
     gtk_grid_attach(GTK_GRID(info.grid), info.weight_entry, 1, 6, 1, 1);
-    gtk_grid_attach(GTK_GRID(info.grid), info.typeBox_entry, 1, 7, 1, 1);
+    gtk_grid_attach(GTK_GRID(info.grid), info.delivery_radio1, 1, 7, 1, 1);
+    gtk_grid_attach(GTK_GRID(info.grid), info.delivery_radio2, 2, 7, 1, 1);
     gtk_grid_attach(GTK_GRID(info.grid), info.submit_button, 1, 10, 1, 1);
     //gtk_grid_attach(GTK_GRID(info.grid), info.back_button, 1, 12, 1, 1);
     /// ***
-    gtk_widget_set_sensitive(info.city_entry, FALSE);
-    gtk_widget_set_sensitive(info.zipCode_entry, FALSE);
+    gtk_widget_set_sensitive(info.companyName_entry, FALSE);
+    gtk_widget_set_sensitive(info.additionalInfo_entry, FALSE);
     gtk_widget_set_sensitive(info.weight_entry, FALSE);
-    gtk_widget_set_sensitive(info.typeBox_entry, FALSE);
+    gtk_widget_set_sensitive(info.delivery_radio1, FALSE);
+    gtk_widget_set_sensitive(info.delivery_radio2, FALSE);
     gtk_widget_set_sensitive(info.submit_button, FALSE);
     /// ***
     gtk_container_add(GTK_CONTAINER(info.window), info.grid);
@@ -136,38 +139,33 @@ void activate_callback(GtkWidget *widget)
 {
     const gchar *text = gtk_entry_get_text(GTK_ENTRY(widget));
 
-    if (strlen(text) > 0)
+    if (strlen(text) >= 0)
     {
         switch (flag)
         {
         case 0:
-            gtk_widget_set_sensitive(info.city_entry, TRUE);
+            gtk_widget_set_sensitive(info.companyName_entry, TRUE);
             gtk_widget_set_sensitive(info.address_entry, FALSE);
             flag++;
             break;
         case 1:
-            gtk_widget_set_sensitive(info.zipCode_entry, TRUE);
-            gtk_widget_set_sensitive(info.city_entry, FALSE);
+            gtk_widget_set_sensitive(info.additionalInfo_entry, TRUE);
+            gtk_widget_set_sensitive(info.companyName_entry, FALSE);
             flag++;
             break;
         case 2:
             gtk_widget_set_sensitive(info.weight_entry, TRUE);
-            gtk_widget_set_sensitive(info.zipCode_entry, FALSE);
+            gtk_widget_set_sensitive(info.additionalInfo_entry, FALSE);
             flag++;
             break;
         case 3:
-            gtk_widget_set_sensitive(info.typeBox_entry, TRUE);
+            gtk_widget_set_sensitive(info.submit_button, TRUE);            gtk_widget_set_sensitive(info.delivery_radio1, TRUE);            gtk_widget_set_sensitive(info.delivery_radio2, TRUE);
             gtk_widget_set_sensitive(info.weight_entry, FALSE);
-            flag++;
-            break;
-        case 4:
-            gtk_widget_set_sensitive(info.submit_button, TRUE);
-            gtk_widget_set_sensitive(info.typeBox_entry, FALSE);
             gtk_window_set_focus(GTK_WINDOW(info.window), info.submit_button);
             flag++;
             break;
         default:
-            flag = 5;
+            flag = 4;
         }
     }
 }
@@ -177,15 +175,24 @@ void submit_clicked(GtkWidget *widget)
     static guchar status = 0;
     char *table[9][25];
 
-    if (status < 5)
+    if (status < 4)
     {
         g_print("%s\n", gtk_entry_get_text(GTK_ENTRY(widget)));
         strcpy(table[status], gtk_entry_get_text(GTK_ENTRY(widget)));
         status++;
     }
 
-    if (status == 5)
+    if (status == 4)
     {
+        gtk_widget_set_sensitive(info.delivery_radio1, FALSE);
+        gtk_widget_set_sensitive(info.delivery_radio2, FALSE);
+        if (gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON(info.delivery_radio1))==TRUE){
+            strcpy(table[4],"STANDARD");
+            printf(table[4]);
+        } else if (gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON(info.delivery_radio2))==TRUE) {
+            strcpy(table[4],"EXPRESS");
+            printf(table[4]);
+        }
         //unsigned long id = time( NULL );
         unsigned long long id = rand() % 10000000001;
         char idText[50];
