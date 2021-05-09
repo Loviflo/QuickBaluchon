@@ -12,8 +12,8 @@ require_once(dirname(__DIR__) . "/bdd/database.php");
     </head>
     <body>
         <?php include(dirname(__DIR__) . "/inc/header_staff.php"); ?>
-        <h1 class="display-1 text-center" style="color: #a4260a;"><?php echo $site->pagesAdminSide->applicationManagement->title; ?></h1>
-        <h2><?php echo $site->pagesAdminSide->applicationManagement->subtitle1; ?></h2>
+        <h2 class="text-center" style="color: #a4260a;"><?php echo $site->pagesAdminSide->applicationManagement->title; ?></h2>
+        <h4><?php echo $site->pagesAdminSide->applicationManagement->subtitle1; ?></h4>
         <?php
         $bdd = getDatabaseConnection();
         $q = 'SELECT company_name FROM client WHERE comf_cli = ?';
@@ -43,7 +43,7 @@ require_once(dirname(__DIR__) . "/bdd/database.php");
             </table>
         </ul>
 
-        <h2><?php echo $site->pagesAdminSide->applicationManagement->subtitle2; ?></h2>
+        <h4><?php echo $site->pagesAdminSide->applicationManagement->subtitle2; ?></h4>
         <?php
         $bdd = getDatabaseConnection();
         $q = 'SELECT username FROM deliveryman WHERE comf_del = ?';

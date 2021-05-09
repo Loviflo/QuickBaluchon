@@ -247,6 +247,10 @@ $xmlstr = <<<XML
                 <action>Action</action>
                 <downloadBill>Download bill</downloadBill>
                 <nothingToBill>Nothing to bill!</nothingToBill>
+                <emailBody>Please find your bill attached to this email</emailBody>
+                <billPaid>Paid?</billPaid>
+                <billYes>Bill paid</billYes>
+                <billNo>Bill not paid</billNo>
             </bill>
         </clientSpace>
         <deliverymanSpace>
@@ -332,7 +336,11 @@ $xmlstr = <<<XML
                 <billingAddress>Billing address : </billingAddress>
                 <siretNumber>SIRET number : </siretNumber>
                 <motives>Motivations : </motives>
+                <billButton>Generate bill</billButton>
             </card>
+            <paidButton>Bill paid</paidButton>
+            <successPaid>Bill labelled as 'paid' with success</successPaid>
+            <errorPaid>Error while trying to label the bill as 'paid'</errorPaid>
         </clientAccountManagement>
         <deliverymanAccountsManagement>
             <pageTitle>Deliveryman account management</pageTitle>

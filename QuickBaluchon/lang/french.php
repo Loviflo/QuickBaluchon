@@ -247,6 +247,10 @@ $xmlstr = <<<XML
                 <action>Action</action>
                 <downloadBill>Télécharger la facture</downloadBill>
                 <nothingToBill>Aucun colis à facturer !</nothingToBill>
+                <emailBody>Veuillez trouver ci-joint votre facture</emailBody>
+                <billPaid>Payée ?</billPaid>
+                <billYes>Facture payée</billYes>
+                <billNo>Facture non payée</billNo>
             </bill>
         </clientSpace>
         <deliverymanSpace>
@@ -332,7 +336,11 @@ $xmlstr = <<<XML
                 <billingAddress>Adresse de facturation : </billingAddress>
                 <siretNumber>Numéro de SIRET : </siretNumber>
                 <motives>Motivations : </motives>
+                <billButton>Générer la facture</billButton>
             </card>
+            <paidButton>Facture payée</paidButton>
+            <successPaid>Facture correctectement désignée comme 'payée'</successPaid>
+            <errorPaid>Erreur lors de la désignation de la facture comme 'payée'</errorPaid>
         </clientAccountManagement>
         <deliverymanAccountsManagement>
             <pageTitle>Gestion des comptes livreur</pageTitle>

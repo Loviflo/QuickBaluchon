@@ -12,10 +12,10 @@ require_once(dirname(__DIR__) . "/bdd/database.php");
     </head>
     <body>
         <?php include(dirname(__DIR__) . "/inc/header_staff.php"); ?>
-        <h1 class="display-1 text-center" style="color: #a4260a;"><?php echo $site->pagesAdminSide->clientAccountsManagement->title; ?></h1>
+        <h2 class="text-center" style="color: #a4260a;"><?php echo $site->pagesAdminSide->clientAccountsManagement->title; ?></h2>
         <?php
         $bdd = getDatabaseConnection();
-        $q = 'SELECT company_name FROM client';
+        $q = 'SELECT id_client, company_name FROM client';
         $req = $bdd->prepare($q);
         $req->execute();
         $results = $req->fetchAll(); ?>
@@ -32,9 +32,9 @@ require_once(dirname(__DIR__) . "/bdd/database.php");
                     <tr>
                         <td class="text-center"><?php echo $user['company_name']; ?></td>
                         <td class="text-center">
-                            <a href="/QuickBaluchon/QuickBaluchon/backend/client_account_management.php?company_name=<?php echo $user['company_name']; ?>" class="btn btn-primary" role="button" style="margin: 2px;"><i class="far fa-eye"></i></a>
+                            <a href="/QuickBaluchon/QuickBaluchon/backend/client_account_management.php?id_client=<?php echo $user['id_client']; ?>" class="btn btn-primary" role="button" style="margin: 2px;"><i class="far fa-eye"></i></a>
                             <!-- <a class="btn btn-success" role="button" style="background: rgb(11,171,56);margin: 2px;"><i class="fas fa-pencil-alt"></i></a> -->
-                            <a href="/QuickBaluchon/QuickBaluchon/backend/actions/client_delete_account.php?company_name=<?php echo $user['company_name']; ?>" class="btn btn-danger" onclick="deletehref(this)" data-bs-toggle="modal" data-bs-target="#deleteAccount" role="button" style="margin: 2px;"><i class="fas fa-trash"></i></a>
+                            <a href="/QuickBaluchon/QuickBaluchon/backend/actions/client_delete_account.php?id_client=<?php echo $user['id_client']; ?>" class="btn btn-danger" onclick="deletehref(this)" data-bs-toggle="modal" data-bs-target="#deleteAccount" role="button" style="margin: 2px;"><i class="fas fa-trash"></i></a>
                         </td>
                     </tr>
                     <?php } ?>

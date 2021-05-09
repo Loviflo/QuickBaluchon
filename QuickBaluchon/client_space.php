@@ -67,7 +67,6 @@ require_once('bdd/database.php');
                 <a class="btn btn-primary" href="downloads/SPS.exe" download="PackagerToolInstaller.exe"><?php echo $site->pagesClientSide->clientSpace->downloadButton; ?></a>
             </div>
             <div class="text-center">
-                <a class="btn btn-primary" href="actions/generateBill.php"><?php echo $site->pagesClientSide->clientSpace->billButton; ?></a>
                 <a class="btn btn-primary" href="actions/billHistory.php"><?php echo $site->pagesClientSide->clientSpace->historyButton; ?></a>
             </div>
         </div>

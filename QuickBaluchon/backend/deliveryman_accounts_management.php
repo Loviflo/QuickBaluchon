@@ -12,7 +12,7 @@ require_once(dirname(__DIR__) . "/bdd/database.php");
     </head>
     <body>
         <?php include(dirname(__DIR__) . "/inc/header_staff.php"); ?>
-        <h1 class="display-1 text-center" style="color: #a4260a;"><?php echo $site->pagesAdminSide->deliverymanAccountsManagement->title; ?></h1>
+        <h2 class="text-center" style="color: #a4260a;"><?php echo $site->pagesAdminSide->deliverymanAccountsManagement->title; ?></h2>
         <?php
         $bdd = getDatabaseConnection();
         $q = 'SELECT username FROM deliveryman';
