@@ -6,11 +6,6 @@
         </a>
     </div>
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-            <li><a href="#" class="nav-link px-2 text-white effect-shine"><?php echo $site->headers->header->item1; ?></a></li>
-            <li><a href="#" class="nav-link px-2 text-white effect-shine"><?php echo $site->headers->header->item2; ?></a></li>
-            <li><a href="#" class="nav-link px-2 text-white effect-shine"><?php echo $site->headers->header->item3; ?></a></li>
-            <li><a href="#" class="nav-link px-2 text-white effect-shine"><?php echo $site->headers->header->item4; ?></a></li>
-            <li><a href="#" class="nav-link px-2 text-white effect-shine"><?php echo $site->headers->header->item5; ?></a></li>
             <li>
                 <form id="formulaire_langue" action="" method="get">
                     <select name="lang" onChange="document.getElementById('formulaire_langue').submit();">
